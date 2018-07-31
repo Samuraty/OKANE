@@ -10,7 +10,11 @@ import { of } from 'rxjs';
 const {BASEURL} = environment;
 
 interface UserObject{
-  username:string,
+  username: String,
+  email: String,
+  city: String,
+  password: String,
+  image: {type: String, default: "images/profilepic.png" }
 }
 
 
@@ -76,3 +80,6 @@ export class SessionService {
   }
 
 }
+
+
+//meter edit del user que falta

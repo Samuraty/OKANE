@@ -6,7 +6,7 @@ const userSchema = new Schema({
   email: String,
   city: String,
   password: String,
-  image: {type: String, default: "images/profilepic.png" }
+  image: {type: String, default: "../assets/images/profilepic.png"} //aunque lo llame desde back tengo que meter la imagen en el front para que no de error
 }, {
   timestamps: {
     createdAt: 'created_at',
