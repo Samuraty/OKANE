@@ -6,7 +6,7 @@ const userSchema = new Schema({
   email: String,
   city: String,
   password: String,
-  image: String
+  image: {type: String, default: "images/profilepic.png" }
 }, {
   timestamps: {
     createdAt: 'created_at',
