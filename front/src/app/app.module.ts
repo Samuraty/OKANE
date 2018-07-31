@@ -10,13 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { SessionService } from '../services/session';
 import { HttpModule } from '@angular/http';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { BoardComponent } from './board/board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    MyprofileComponent
+    MyprofileComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,

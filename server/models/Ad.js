@@ -6,9 +6,11 @@ const currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"]
 const adSchema = new Schema({
   creator: {type: Schema.Types.ObjectId, ref:"User"},
   city: String,
+  quantity: Number,
   have: {type: String, enum: currencies},
   want: {type: String, enum: currencies},
-  quantity: Number
+  ratio: Number,
+  total: Number
 }, {
   timestamps: {
     createdAt: 'created_at',
