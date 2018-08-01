@@ -4,8 +4,18 @@
 
 <div>
   <div *ngFor="let ad of ads">
-    <!-- <a [routerLink]="['ad',ad._id]"> </a>-->
-    <h3> {{ ad.creator }} </h3>
+      <a [routerLink]="['ad',ad._id]"><h3>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }} - {{ ad.city }} <br> by {{ ad.creator }} </h3></a>
+
+    <!-- <h3> {{ ad.creator }} </h3>
     <p> {{ ad.city }} </p>
+    <label for="quantity">Quantity</label>
+    <input type="number" [(ngModel)]="quantity" name="quantity"/>
+    <br>
+    <label for="have">Have</label>
+    <input type="text" [(ngModel)]="have" name="have"/>
+    <br>
+    <label for="want">Want</label>
+    <input type="text" [(ngModel)]="want" name="want"/>
+    <br> -->
   </div>
 </div>

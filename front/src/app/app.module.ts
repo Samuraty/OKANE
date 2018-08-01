@@ -12,6 +12,7 @@ import { AdService } from '../services/ad.service';
 import { HttpModule } from '@angular/http';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { BoardComponent } from './board/board.component';
+import { AdDetailComponent } from './ad-detail/ad-detail.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { BoardComponent } from './board/board.component';
     LoginComponent,
     SignupComponent,
     MyprofileComponent,
-    BoardComponent
+    BoardComponent,
+    AdDetailComponent
   ],
   imports: [
     BrowserModule,
