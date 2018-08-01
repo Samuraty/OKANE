@@ -1,10 +1,11 @@
-<p>LISTA DE ANUNCIOS</p>
+<h2>LISTA DE ANUNCIOS</h2>
 
 <!-- <a [routerLink]="['new']">Nuevo anuncio</a> -->
 
 <div>
   <div *ngFor="let ad of ads">
-      <a [routerLink]="['ad',ad._id]"><h3>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }} - {{ ad.city }} <br> by {{ ad.creator }} </h3></a>
+      <a [routerLink]="['/ads',ad._id]"><h3>{{ ad.quantity }} {{ ad.have }} to
+         {{ ad.want }} - {{ ad.city }} <br> by {{ ad.creator }} </h3></a>
 
     <!-- <h3> {{ ad.creator }} </h3>
     <p> {{ ad.city }} </p>
