@@ -23,6 +23,6 @@ export class AdNewComponent implements OnInit {
   submit() {
     this.adService
       .newAd(this.newAd)
-      .subscribe(() => this.router.navigate(["/"]));
+      .subscribe(() => this.router.navigate(["/ads"]));
   }
 }

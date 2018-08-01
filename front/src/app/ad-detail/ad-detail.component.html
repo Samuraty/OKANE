@@ -1,14 +1,11 @@
 <h1> Detalle del anuncio </h1>
-<a [routerLink]="['/ads']"> Volver a Board </a>
-
-
 
 <div *ngIf="ad">
 <h3>{{ ad.quantity }} {{ ad.have }} to
     {{ ad.want }} - {{ ad.city }} <br> by {{ ad.creator.username }} </h3>
 </div>
 
-
+<a [routerLink]="['/ads']"> Back</a>
 
 <!-- <div *ngIf="ad">
   <div class="ad-info">
