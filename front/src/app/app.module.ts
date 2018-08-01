@@ -13,6 +13,7 @@ import { HttpModule } from '@angular/http';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { BoardComponent } from './board/board.component';
 import { AdDetailComponent } from './ad-detail/ad-detail.component';
+import { AdNewComponent } from './ad-new/ad-new.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AdDetailComponent } from './ad-detail/ad-detail.component';
     SignupComponent,
     MyprofileComponent,
     BoardComponent,
-    AdDetailComponent
+    AdDetailComponent,
+    AdNewComponent
   ],
   imports: [
     BrowserModule,

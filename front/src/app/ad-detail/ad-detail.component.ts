@@ -18,10 +18,11 @@ export class AdDetailComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.adService.get(params.id).subscribe(ad => {
         this.ad = ad;
+        console.log(this.ad)
       });
     });
   }
-
+  
   ngOnInit() {}
 
   deleteAd() {

@@ -1,12 +1,16 @@
-<p>
-  ad-detail works!
-</p>
-
-
 <h1> Detalle del anuncio </h1>
 <a [routerLink]="['/ads']"> Volver a Board </a>
 
+
+
 <div *ngIf="ad">
+<h3>{{ ad.quantity }} {{ ad.have }} to
+    {{ ad.want }} - {{ ad.city }} <br> by {{ ad.creator.username }} </h3>
+</div>
+
+
+
+<!-- <div *ngIf="ad">
   <div class="ad-info">
     <h3> {{ ad.creator }} </h3>
     <p> {{ ad.city }} </p>
@@ -25,7 +29,7 @@
     <label for="total">Total</label>
     <input type="number" [(ngModel)]="total" name="total" />
 
-    <!-- <a [routerLink]="['/edit',ad._id]">Editar teléfono</a>
-      <button (click)="deletead()"> Borrar teléfono </button> -->
+    <a [routerLink]="['/edit',ad._id]">Editar teléfono</a>
+      <button (click)="deletead()"> Borrar teléfono </button>
   </div>
-</div>
+</div> -->
