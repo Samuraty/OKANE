@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdService } from '../../services/ad.service'
 
 @Component({
   selector: 'app-board',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
+  ads: Array<any>;
 
-  constructor() { }
+  constructor(private adService: AdService ) { 
+    this.adService.getList().subscribe(data => this.ads = data);
+  }
 
   ngOnInit() {
   }
 
 }
+

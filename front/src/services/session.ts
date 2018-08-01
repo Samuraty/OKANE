@@ -14,7 +14,8 @@ interface UserObject{
   email: String,
   city: String,
   password: String,
-  image: {type: String, default: "images/profilepic.png" }
+  image: {type: String, default: "images/profilepic.png" },
+  rating: Number
 }
 
 

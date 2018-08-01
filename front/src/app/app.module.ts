@@ -8,9 +8,11 @@ import { RouterModule } from '../../node_modules/@angular/router';
 import { routes } from './routes';
 import { FormsModule } from '@angular/forms';
 import { SessionService } from '../services/session';
+import { AdService } from '../services/ad.service';
 import { HttpModule } from '@angular/http';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { BoardComponent } from './board/board.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { BoardComponent } from './board/board.component';
     FormsModule,
     HttpModule
   ],
-  providers: [SessionService],
+  providers: [SessionService, AdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

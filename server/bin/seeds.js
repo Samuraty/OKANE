@@ -6,70 +6,71 @@ const bcrypt = require('bcrypt');
 const salt = bcrypt.genSaltSync(10);
 const hashPass = bcrypt.hashSync('1234', salt);
 
-mongoose.connect("mongodb://localhost/project3");
+mongoose.connect("mongodb://localhost/project3")
+.then(()=> console.log('conectado'));
 
 const users = [{
-  _id:"5b60345e783f1c2ad2d738b7",
   username: "alex",
   email: "pepe04444@gmail.com",
-  city: "madrid",
-  password: hashPass
+  city: "Madrid",
+  password: hashPass,
+  rating: 5
   
 },
 {
-  _id:"5b603617783f1c2ad2d738b8",
   username: "alex1",
   email: "pepe04444@gmail.com",
-  city: "madrid",
-  password: hashPass
+  city: "Madrid",
+  password: hashPass,
+  rating: 3
 },
 {
-  _id:"5b60646ade0bb0402ccc094e",
   username: "lolo",
   email: "pepe04444@gmail.com",
-  city: "madrid",
-  password: hashPass
+  city: "Madrid",
+  password: hashPass,
+  rating: 1
 }
 ]
 
 const ads = [{
-  creator: {type: Schema.Types.ObjectId, ref:"User"},
-  city: String,
+  creator: '5b60345e783f1c2ad2d738b7',
+  city: "Madrid",
   have: "EUR",
   want: "GBP",
   quantity: 20,
 },
 {
-  creator: {type: Schema.Types.ObjectId, ref:"User"},
-  city: String,
+  creator:'5b60646ade0bb0402ccc094e',
+  city: "Madrid",
   have: "USD",
   want: "EUR",
   quantity: 300,
 },
 {
-  creator: {type: Schema.Types.ObjectId, ref:"User"},
-  city: String,
+  creator: '5b60646ade0bb0402ccc094e',
+  city: "Madrid",
   have: "USD",
   want: "JPY",
   quantity: 500,
 },
 {
-  creator: {type: Schema.Types.ObjectId, ref:"User"},
-  city: String,
+  creator: '5b60646ade0bb0402ccc094e',
+  city: "Madrid",
   have: "JPY",
   want: "GBP",
   quantity: 25,
 },
 {
-  creator: {type: Schema.Types.ObjectId, ref:"User"},
-  city: String,
+  creator: '5b60646ade0bb0402ccc094e',
+  city: "Madrid",
   have: "CNY",
   want: "EUR",
   quantity: 70,
 },
 {
-  creator: {type: Schema.Types.ObjectId, ref:"User"},
-  city: String,
+  creator: '5b60646ade0bb0402ccc094e',
+  city: "Madrid",
   have: "GBP",
   want: "CAD",
   quantity: 92,
@@ -78,7 +79,6 @@ const ads = [{
 
 
 Promise.all([User.create(users), Ad.create(ads)])
-User.create(user)
   .then(() => {
     console.log("Seed success!");
     mongoose.connection.close();

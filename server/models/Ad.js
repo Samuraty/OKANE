@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
+const User = require('./User');
 
 const currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"];
 
 const adSchema = new Schema({
-  creator: {type: Schema.Types.ObjectId, ref:"User"},
+  creator: {type:Schema.Types.ObjectId, ref:'User'},
   city: String,
   quantity: Number,
   have: {type: String, enum: currencies},

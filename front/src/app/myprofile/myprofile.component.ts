@@ -12,6 +12,7 @@ export class MyprofileComponent implements OnInit {
   email;
   city;
   image;
+  rating;
 
   constructor(private session: SessionService, private router:Router) {
     if (!this.session.user) {
@@ -24,6 +25,7 @@ export class MyprofileComponent implements OnInit {
     this.email = this.session.user.email;
     this.city = this.session.user.city;
     this.image = this.session.user.image;
+    this.rating = this.session.user.rating;
   }
 
 }

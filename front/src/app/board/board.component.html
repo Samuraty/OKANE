@@ -1,3 +1,11 @@
-<p>
-  board works!
-</p>
+<p>LISTA DE ANUNCIOS</p>
+
+<!-- <a [routerLink]="['new']">Nuevo anuncio</a> -->
+
+<div>
+  <div *ngFor="let ad of ads">
+    <!-- <a [routerLink]="['ad',ad._id]"> </a>-->
+    <h3> {{ ad.creator }} </h3>
+    <p> {{ ad.city }} </p>
+  </div>
+</div>
