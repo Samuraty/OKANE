@@ -14,6 +14,10 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
 import { BoardComponent } from './board/board.component';
 import { AdDetailComponent } from './ad-detail/ad-detail.component';
 import { AdNewComponent } from './ad-new/ad-new.component';
+import { UserService } from '../services/user.service';
+import { AdEditComponent } from './ad-edit/ad-edit.component';
+import { MyprofileEditComponent } from './myprofile-edit/myprofile-edit.component';
+
 
 
 @NgModule({
@@ -24,7 +28,10 @@ import { AdNewComponent } from './ad-new/ad-new.component';
     MyprofileComponent,
     BoardComponent,
     AdDetailComponent,
-    AdNewComponent
+    AdNewComponent,
+    AdEditComponent,
+    MyprofileEditComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,7 @@ import { AdNewComponent } from './ad-new/ad-new.component';
     FormsModule,
     HttpModule
   ],
-  providers: [SessionService, AdService],
+  providers: [SessionService, AdService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

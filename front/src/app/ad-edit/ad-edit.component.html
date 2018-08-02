@@ -1,0 +1,21 @@
+<p>
+  ad-edit works!
+</p>
+
+<h4> Edit your ad </h4>
+<a [routerLink]="['/ads']">Back to board</a>
+
+<div *ngIf="ad">
+    <label>City</label>
+    <input type="text" [(ngModel)]="ad.city" name="city"/>
+    <br>
+    <label>Quantity</label>
+    <input type="number" [(ngModel)]="ad.quantity" name="quantity"/>
+    <br>
+    <label>Have</label>
+    <input type="text" [(ngModel)]="ad.have" name="have"/>
+    <br>
+    <label>Want</label>
+    <input type="text" [(ngModel)]="ad.want" name="want"/>
+    <br>
+</div>

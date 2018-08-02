@@ -81,6 +81,3 @@ export class SessionService {
   }
 
 }
-
-
-//meter edit del user que falta
