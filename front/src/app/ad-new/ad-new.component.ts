@@ -16,6 +16,8 @@ export class AdNewComponent implements OnInit {
   creator:''
   };
 
+  currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"];
+
   constructor(private adService: AdService, private router: Router, public sessionService: SessionService) {
     sessionService.isLogged().subscribe(user => this.ad.creator = user._id)
   }

@@ -3,18 +3,21 @@
 
 <form>
     <label for="city">City</label>
-    <input type="text" [(ngModel)]="ad.city" name="city"/>
+    <input type="text" [ngModel]="ad.city | capitalizeFirst" (ngModelChange)="ad.city=$event" name="city"/>
     <br>
     <label for="quantity">Quantity</label>
-    <input type="number" [(ngModel)]="ad.quantity" name="quantity"/>
+    <input type="number" [(ngModel)]="ad.quantity" name="quantity" min = 0/>
     <br>
     <label for="have">Have</label>
-    <input type="text" [(ngModel)]="ad.have" name="have"/>
+    <select name="have" [(ngModel)]="ad.have">
+        <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+    </select>
     <br>
     <label for="want">Want</label>
-    <input type="text" [(ngModel)]="ad.want" name="want"/>
+    <select name="want" [(ngModel)]="ad.want">
+        <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+    </select>
     <br>
-
     <button (click)="newAd()"> Create</button>
 </form>
 

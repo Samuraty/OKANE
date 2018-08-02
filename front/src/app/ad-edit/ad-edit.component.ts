@@ -12,6 +12,8 @@ import { UserService } from "../../services/user.service";
 export class AdEditComponent implements OnInit {
   ad;
 
+  currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"]
+
   constructor(
     private sessionService: SessionService,
     private adService: AdService,
