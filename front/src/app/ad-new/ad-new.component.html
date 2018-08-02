@@ -1,27 +1,21 @@
-<p>
-  ad-new works!
-</p>
-
-
 <h1> Añade un nuevo anuncio </h1>
 <a [routerLink]="['/ads']"> Vuelve a la lista</a>
 
-<h3> {{ ad.creator }} </h3>
 <form>
     <label for="city">City</label>
-    <input type="text" [(ngModel)]="city" name="city"/>
+    <input type="text" [(ngModel)]="ad.city" name="city"/>
     <br>
     <label for="quantity">Quantity</label>
-    <input type="number" [(ngModel)]="quantity" name="quantity"/>
+    <input type="number" [(ngModel)]="ad.quantity" name="quantity"/>
     <br>
     <label for="have">Have</label>
-    <input type="text" [(ngModel)]="have" name="have"/>
+    <input type="text" [(ngModel)]="ad.have" name="have"/>
     <br>
     <label for="want">Want</label>
-    <input type="text" [(ngModel)]="want" name="want"/>
+    <input type="text" [(ngModel)]="ad.want" name="want"/>
     <br>
 
-  <button (click)="submit()"> Guardar </button>
+    <button (click)="newAd()"> Create</button>
 </form>
 
 <!-- <h3> {{ ad.creator }} </h3>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "../../../node_modules/@angular/router";
 import { AdService } from "../../services/ad.service";
+import { SessionService } from "../../services/session";
 
 @Component({
   selector: "app-ad-new",
@@ -8,21 +9,23 @@ import { AdService } from "../../services/ad.service";
   styleUrls: ["./ad-new.component.css"]
 })
 export class AdNewComponent implements OnInit {
-  newAd = {
-    creator:"",
-    city: "",
-    quantity: "",
-    have: "",
-    want: "",
+  ad = {city:'',
+  quantity:'',
+  have:'',
+  want:'',
+  creator:''
   };
 
-  constructor(private adService: AdService, private router: Router) {}
+  constructor(private adService: AdService, private router: Router, public sessionService: SessionService) {
+    sessionService.isLogged().subscribe(user => this.ad.creator = user._id)
+  }
 
   ngOnInit() {}
 
-  submit() {
-    this.adService
-      .newAd(this.newAd)
-      .subscribe(() => this.router.navigate(["/ads"]));
+  newAd(){
+    console.log(this.ad);
+    this.adService.newAd(this.ad).subscribe(() => {
+      this.router.navigate(["/ads"])
+    })
   }
 }

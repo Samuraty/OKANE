@@ -12,5 +12,5 @@ export const routes: Routes = [
   { path:'profile', component:MyprofileComponent},
   { path:'ads', component:BoardComponent},
   { path:'ad/:id', component: AdDetailComponent },
-  { path:'new', component: AdNewComponent},
+  { path:'ads/new', component: AdNewComponent},
 ];
