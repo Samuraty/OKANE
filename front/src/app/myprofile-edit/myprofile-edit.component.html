@@ -1,25 +1,23 @@
-<p>
-  myprofile-edit works!
-</p>
+<h2> Edit your profile </h2>
 
-<h4> Edit your profile </h4>
-<a [routerLink]="['/profile']">Back to profile</a>
 
 <div *ngIf="user">
   <label>Name</label>
   <input type="text" [(ngModel)]="user.username" name="name" />
-
+  <br>
   <label>Email</label>
   <input type="text" [(ngModel)]="user.email" name="email" />
-
+  <br>
   <label>City</label>
   <input type="text" [(ngModel)]="user.city" name="city" />
-
+  <br>
   <label>Password</label>
   <input type="password" [(ngModel)]="user.password" name="password" />
-
+  <br>
   <label>Image</label>
-  <input type="text" [(ngModel)]="user.image" name="image" />
-
+  <input type="file" [(ngModel)]="user.image" name="image" />
+  <br>
   <button (click)="edit(user._id)"> Edit </button>
 </div>
+
+<a [routerLink]="['/profile']">Back to profile</a>

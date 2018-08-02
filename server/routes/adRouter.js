@@ -33,7 +33,7 @@ router.get("/:id", (req, res, next) => {
 });
 
 // Update
-router.put("/:id", (req, res, next) => {
+router.put("/edit/:id", (req, res, next) => {
   const updates = _.pick(req.body, fields);
 
   Ad.findByIdAndUpdate(req.params.id, updates, { new: true })

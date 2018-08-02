@@ -29,7 +29,7 @@ export class AdService {
 
   edit(ad) {
     return this.http
-      .put(`${this.BASE_URL}/api/ad/${ad._id}`, ad)
+      .put(`${this.BASE_URL}/api/ad/edit/${ad._id}`, ad)
       .pipe(map(res => res.json()));
   }
 

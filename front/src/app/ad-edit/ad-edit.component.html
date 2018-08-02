@@ -3,7 +3,7 @@
 </p>
 
 <h4> Edit your ad </h4>
-<a [routerLink]="['/ads']">Back to board</a>
+
 
 <div *ngIf="ad">
     <label>City</label>
@@ -18,4 +18,7 @@
     <label>Want</label>
     <input type="text" [(ngModel)]="ad.want" name="want"/>
     <br>
+    <button (click)="edit(ad._id)"> Edit </button>
+    <br>
+    <a [routerLink]="['/ads']">Back to board</a>
 </div>
