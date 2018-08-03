@@ -14,6 +14,12 @@ export class AdService {
       .get(`${this.BASE_URL}/api/ad`)
       .pipe(map(res => res.json()));
   }
+  //
+  getAd(id) {
+    return this.http
+      .get(`${this.BASE_URL}/api/ad/myad/${id}`)
+      .pipe(map(res => res.json()));
+  }
 
   newAd(ad) {
     return this.http

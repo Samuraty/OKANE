@@ -31,3 +31,11 @@
   </div>
 
   <button [routerLink]="['/edit',user._id]">Edit profile</button>
+
+
+  <div>
+    <div *ngFor="let myads of adList">
+    <h3>{{ myads.quantity }} {{ myads.have }} to {{ myads.want }} - {{ myads.city }}
+      <br> by {{ myads.creator.username }} </h3>
+    </div>
+  </div>

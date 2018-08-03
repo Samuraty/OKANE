@@ -32,6 +32,15 @@ router.get("/:id", (req, res, next) => {
     .catch(e => next(e));
 });
 
+//
+router.get("/myad/:id", (req, res, next) => {
+  Ad.find({creator: req.params.id})
+    .populate('creator')
+    .then(object => {console.log(object);res.json(object)})
+    .catch(e => next(e));
+});
+
+
 // Update
 router.put("/edit/:id", (req, res, next) => {
   const updates = _.pick(req.body, fields);
