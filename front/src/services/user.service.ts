@@ -24,7 +24,7 @@ user;
   edit(user) {
     console.log(user._id)
     return this.http
-      .patch(`${environment.BASEURL}/api/user/edit/${user._id}`, user)
+      .put(`${environment.BASEURL}/api/user/edit/${user._id}`, user)
       .pipe(map(res => res.json()));
   }
 
