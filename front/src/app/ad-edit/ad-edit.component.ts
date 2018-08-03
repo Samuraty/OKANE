@@ -11,6 +11,8 @@ import { UserService } from "../../services/user.service";
 })
 export class AdEditComponent implements OnInit {
   ad;
+  user;
+  canEdit: boolean = false;
 
   currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"]
 
@@ -21,15 +23,18 @@ export class AdEditComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) {
-    this.route.params.subscribe(params =>
+    this.route.params.subscribe(params => {
       this.adService.get(params.id).subscribe(ad => {
         this.ad = ad;
-      })
-    )
+        this.sessionService.isLogged().subscribe(user => {  
+          this.user = user;
+          if (this.user._id == this.ad.creator._id) this.canEdit = true; //si el usuario coincide con el creador del anuncio puede editar
+        })
+      });
+    });
    }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   edit(ad) {
     this.adService.edit(this.ad).subscribe(ad => {

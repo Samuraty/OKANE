@@ -22,7 +22,8 @@
         <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
     </select>
     <br>
-    <button (click)="edit(ad._id)"> Save </button>
-    <br>
+    <div *ngIf="canEdit">
+        <button (click)="edit(ad._id)"> Save </button>
+    </div>
     <a [routerLink]="['/ads']">Back to board</a>
 </div>

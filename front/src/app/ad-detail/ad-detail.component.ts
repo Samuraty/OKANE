@@ -12,19 +12,21 @@ export class AdDetailComponent implements OnInit {
   ad;
   user;
   canDelete: boolean = false;
+  canEdit: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private adService: AdService,
     private router: Router,
-    public sessionService: SessionService
+    private sessionService: SessionService
   ) {
     this.route.params.subscribe(params => {
       this.adService.get(params.id).subscribe(ad => {
         this.ad = ad;
         this.sessionService.isLogged().subscribe(user => {
           this.user = user;
-          if (this.user._id == this.ad.creator._id) this.canDelete = true;
+          if (this.user._id == this.ad.creator._id) this.canDelete = true;  //si el usuario coincide con el creador del anuncio puede borrar
+          if (this.user._id == this.ad.creator._id) this.canEdit = true;
         })
         
       });

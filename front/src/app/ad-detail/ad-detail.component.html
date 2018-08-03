@@ -4,8 +4,9 @@
   <h3>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }} - {{ ad.city }}
     <br> by {{ ad.creator.username }} </h3>
   <br>
-  <button [routerLink]="['/ad/edit',ad._id]">Edit Ad</button>
-  <br>
+  <div *ngIf="canEdit">
+    <button [routerLink]="['/ad/edit',ad._id]">Edit Ad</button>
+  </div>
   <div *ngIf="canDelete">
     <button (click)="deleteAd()"> Delete </button>
   </div>
