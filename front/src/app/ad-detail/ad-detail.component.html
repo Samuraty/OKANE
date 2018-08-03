@@ -5,6 +5,9 @@
     <br> by {{ ad.creator.username }} </h3>
   <br>
   <button [routerLink]="['/ad/edit',ad._id]">Edit Ad</button>
+  <br>
+  <button (click)="deleteAd()"> Delete </button>
+
 </div>
 
 
