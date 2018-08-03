@@ -18,6 +18,7 @@ import { UserService } from '../services/user.service';
 import { AdEditComponent } from './ad-edit/ad-edit.component';
 import { MyprofileEditComponent } from './myprofile-edit/myprofile-edit.component';
 import { CapitalizeFirstPipe} from './pipes/capitalizeFirst.pipe';
+import { CoinEvolutionComponent } from './coin-evolution/coin-evolution.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CapitalizeFirstPipe} from './pipes/capitalizeFirst.pipe';
     AdNewComponent,
     AdEditComponent,
     MyprofileEditComponent,
-    CapitalizeFirstPipe
+    CapitalizeFirstPipe,
+    CoinEvolutionComponent
   ],
   imports: [
     BrowserModule,

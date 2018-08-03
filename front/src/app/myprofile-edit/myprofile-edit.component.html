@@ -11,11 +11,8 @@
   <label>City</label>
   <input type="text" [(ngModel)]="user.city" name="city" />
   <br>
-  <label>Password</label>
-  <input type="password" [(ngModel)]="user.password" name="password" />
-  <br>
   <label>Image</label>
-  <input type="file" [(ngModel)]="user.image" name="image" />
+  <input type="file" [src]="user.image" name="image" />
   <br>
   <button (click)="edit(user._id)"> Edit </button>
 </div>

@@ -89,9 +89,11 @@ const genericCrud = require('./routes/genericCRUD');
 
 app.use('/api/auth', authRouter);
 //app.use('/api/news', genericCrud(require('./models/News')));
-app.use('/api/user', genericCrud(require('./models/User')));
+//app.use('/api/user', genericCrud(require('./models/User')));
 const adRouter = require('./routes/adRouter');
-app.use('/api/ad', adRouter)
+app.use('/api/ad', adRouter);
+const userRouter = require('./routes/userRouter');
+app.use('/api/user', userRouter)
 
 
 module.exports = app;
