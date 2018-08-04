@@ -21,6 +21,7 @@ export class CoinEvolutionComponent implements OnInit {
     this.convertService.convertCurrency(from, to).subscribe(res => {
       this.convertion = Number(Object.values(res)[0]) * amount;
       console.log(this.convertion);
+      console.log(Math.round(this.convertion * 100) / 100);
     });
   }
 }

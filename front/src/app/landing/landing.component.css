@@ -31,7 +31,7 @@ html,body{
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0) scale(1.0, 1.0);
     transform: translateZ(0);
-  background:#1B2030 url(https://currencyconvertersinc.com/wp-content/uploads/2017/05/how-much-money-bring-on-trip-June-Blog.jpg) top center no-repeat;
+  background:#1B2030 url("../../assets/images/landing.jpg") top center no-repeat;
   background-size: cover;
   background-position: 100%;
   background-attachment:fixed;
