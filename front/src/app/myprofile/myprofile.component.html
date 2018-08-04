@@ -6,8 +6,6 @@
     <h3>{{user.username}}</h3>
     <label for="email">Email:</label>
     <h3>{{user.email}}</h3>
-    <label for="city">City: </label>
-    <h3>{{user.city}}</h3>
     <img [src]="user.image" width=100/>
   </div>
 </div>
@@ -35,7 +33,7 @@
 
   <div>
     <div *ngFor="let myads of adList">
-    <h3>{{ myads.quantity }} {{ myads.have }} to {{ myads.want }} - {{ myads.city }}
-      <br> by {{ myads.creator.username }} </h3>
+      <a [routerLink]="['/ad',myads._id]"><h3>{{ myads.quantity }} {{ myads.have }} to {{ myads.want }} - {{ myads.city }}
+      <br> by {{ myads.creator.username }} </h3></a>
     </div>
   </div>

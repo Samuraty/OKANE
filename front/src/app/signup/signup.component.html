@@ -1,17 +1,32 @@
 <form>
+  <div class="wrapper">
     <h2> Signup </h2>
-    <label> Username </label>
-    <input type="text" [(ngModel)]="username" name="username" required/>
-    <br>
-    <label> Email </label>
-    <input type="email" [(ngModel)]="email" name="email" required/>
-    <br>
-    <label> City </label>
-    <input type="text" [(ngModel)]="city" name="city" required/>
-    <br>
-    <label> Password </label>
-    <input type="password" [(ngModel)]="password" name="password" required/>
-    <br>
-    <button (click)="signup(username, email, city, password)"> SIGNUP </button>
+    <section>
+      <label> Username </label>
+      <input class="main-form" type="text" [(ngModel)]="username" name="username" required/>
+      <br>
+      <label> Email </label>
+      <input class="main-form" type="email" [(ngModel)]="email" name="email" required/>
+      <br>
+      <label> Password </label>
+      <input class="main-form" type="password" [(ngModel)]="password" name="password" required/>
+      <br>
+      <button (click)="signup(username, email, password)"> SIGNUP </button>
+    </section>
+  </div>
   </form>
   <p class="error"> {{ error }} </p>
+
+
+   <!-- <div class="wrapper">
+    <h1>Ubuntu Login</h1>
+    <section>
+      <input class="main-form" type="text" name="usrname" placeholder="email"/>
+        <input class="main-form" type="password" name="password" placeholder="password"/>
+      <button>Sign in</button>
+    </section>
+    <footer>
+      <input class="yolo" name="" value="" type="checkbox"/><h6>Remember me</h6>
+    </footer>
+  </div>  -->
+

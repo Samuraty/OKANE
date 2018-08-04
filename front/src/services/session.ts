@@ -12,7 +12,6 @@ const {BASEURL} = environment;
 interface UserObject{
   username: String,
   email: String,
-  city: String,
   password: String,
   image: {type: String, default: "images/profilepic.png" },
   rating: Number
@@ -49,8 +48,8 @@ export class SessionService {
     return e;
   }
 
-  signup(username:string, email:string, city:string, password:string): Observable<object>{
-    return this.http.post(`${BASEURL}/api/auth/signup`,{username, email, city, password},this.options).pipe(
+  signup(username:string, email:string, password:string): Observable<object>{
+    return this.http.post(`${BASEURL}/api/auth/signup`,{username, email, password},this.options).pipe(
       map( (res:Response) => {
         let data = res.json();
         this.user = data.user;
