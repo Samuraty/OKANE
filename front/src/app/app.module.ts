@@ -19,6 +19,8 @@ import { AdEditComponent } from './ad-edit/ad-edit.component';
 import { MyprofileEditComponent } from './myprofile-edit/myprofile-edit.component';
 import { CapitalizeFirstPipe} from './pipes/capitalizeFirst.pipe';
 import { CoinEvolutionComponent } from './coin-evolution/coin-evolution.component';
+import { AdCityFilterPipe, AdHaveFilterPipe, AdWantFilterPipe } from  './pipes/adFilter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +34,9 @@ import { CoinEvolutionComponent } from './coin-evolution/coin-evolution.componen
     AdEditComponent,
     MyprofileEditComponent,
     CapitalizeFirstPipe,
+    AdCityFilterPipe,
+    AdHaveFilterPipe,
+    AdWantFilterPipe,
     CoinEvolutionComponent
   ],
   imports: [

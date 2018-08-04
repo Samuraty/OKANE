@@ -3,7 +3,26 @@
 <a [routerLink]="['/ads/new']"><h2>Nuevo anuncio</h2></a>
 
 <div>
-  <div *ngFor="let ad of ads">
+  Filter your board!
+  <br>
+  <label for="city">City: </label>
+  <input type="text" placeholder="Search by City" [ngModel]="searchCity | capitalizeFirst" (ngModelChange)="searchCity=$event">
+  <br>
+  <label for="have">Currency you have: </label>
+  <select name="have" [(ngModel)]="searchHave">
+      <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+  </select>
+  <br>
+  <label for="want">Currency you want: </label>
+  <select name="want" [(ngModel)]="searchWant">
+      <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+  </select>
+  <br>
+</div>
+
+
+<div>
+  <div *ngFor="let ad of ads | adCityFilter:searchCity | adHaveFilter:searchHave | adWantFilter:searchWant">
       <a [routerLink]="['/ad',ad._id]"><h3>{{ ad.quantity }} {{ ad.have }} to
          {{ ad.want }} - {{ ad.city }} <br> by {{ ad.creator.username }} </h3></a>
   </div>
