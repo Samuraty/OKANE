@@ -1,20 +1,44 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1 *ngIf="!sessionService.user" >WELCOME TO OKANE</h1>
-  <h1 *ngIf="sessionService.user" >Welcome to Okane - {{ sessionService.user.username }}!</h1>
 
+<!-- <nav>
+  <div style="text-align:center">
+    <h1 *ngIf="!sessionService.user" >WELCOME TO OKANE</h1>
+    <h1 *ngIf="sessionService.user" >Welcome to Okane - {{ sessionService.user.username }}!</h1>
+  </div>
+
+  <div>
+    <ul>
+      <li><a [routerLink]="['/']">HOME</a></li>
+      <li *ngIf="!sessionService.user"><a [routerLink]="['/signup']">Signup</a></li>
+      <li *ngIf="!sessionService.user"><a [routerLink]="['/login']">Login</a></li>
+
+
+      <li *ngIf="sessionService.user"><a [routerLink]="['/evolution']">Coins Evolution</a></li>
+      <li *ngIf="sessionService.user"><a [routerLink]="['/profile']">My profile</a></li>
+      <li *ngIf="sessionService.user"><a [routerLink]="['/ads']">Board</a></li>
+      <li *ngIf="sessionService.user"><a href="#" (click)="logout()">Logout</a></li>
+    </ul>
 </div>
-<ul>
-  <li><a [routerLink]="['/']">HOME</a></li>
-  <li *ngIf="!sessionService.user"><a [routerLink]="['/signup']">Signup</a></li>
-  <li *ngIf="!sessionService.user"><a [routerLink]="['/login']">Login</a></li>
+</nav> -->
 
+<nav class="navbar navbar-expand-lg navbar-light header-color">
+  <a class="navbar-brand" [routerLink]="['/']">OKANE</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse header-right" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+        <li *ngIf="!sessionService.user"><a class="nav-item nav-link" [routerLink]="['/signup']">Signup</a></li>
+        <li *ngIf="!sessionService.user"><a class="nav-item nav-link"[routerLink]="['/login']">Login</a></li>
+  
+        <li *ngIf="sessionService.user"><a class="nav-item nav-link"[routerLink]="['/ads']">Board</a></li>
+        <li *ngIf="sessionService.user"><a class="nav-item nav-link"[routerLink]="['/evolution']">Coins Evolution</a></li>
+        <li *ngIf="sessionService.user"><a class="nav-item nav-link"[routerLink]="['/profile']">My profile</a></li>
+        <li *ngIf="sessionService.user"><a class="nav-item nav-link" href="#" (click)="logout()">Logout</a></li>
+    </div>
+  </div>
+</nav>
 
-  <li *ngIf="sessionService.user"><a [routerLink]="['/evolution']">Coins Evolution</a></li>
-  <li *ngIf="sessionService.user"><a [routerLink]="['/profile']">My profile</a></li>
-  <li *ngIf="sessionService.user"><a [routerLink]="['/ads']">Board</a></li>
-  <li *ngIf="sessionService.user"><a href="#" (click)="logout()">Logout</a></li>
-</ul>
 
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConvertService } from '../../services/convert.service';
 
 @Component({
   selector: 'app-coin-evolution',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coin-evolution.component.css']
 })
 export class CoinEvolutionComponent implements OnInit {
+  convertion;
 
-  constructor() { }
+  constructor(public convertService: ConvertService) {
+    // prueba
+    this.convert(10, 'USD', 'EUR');
+   }
 
   ngOnInit() {
   }
 
+  convert(amount, from, to) {
+    this.convertService.convertCurrency(from, to).subscribe(res => {
+      this.convertion = Number(Object.values(res)[0]) * amount;
+      console.log(this.convertion);
+    });
+  }
 }

@@ -1,0 +1,14 @@
+
+nav {
+  color:white;
+}
+
+.header-right {
+  justify-content: flex-end;
+  
+}
+
+.header-color {
+  background-color: #f9cf00;
+}
+

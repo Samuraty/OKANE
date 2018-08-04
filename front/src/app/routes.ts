@@ -8,7 +8,7 @@ import { AdNewComponent } from './ad-new/ad-new.component';
 import { MyprofileEditComponent } from './myprofile-edit/myprofile-edit.component';
 import { AdEditComponent } from './ad-edit/ad-edit.component';
 import { CoinEvolutionComponent } from './coin-evolution/coin-evolution.component';
-
+import { LandingComponent } from './landing/landing.component';
 
 export const routes: Routes = [
   { path:'signup', component:SignupComponent},
@@ -20,4 +20,5 @@ export const routes: Routes = [
   { path:'ads/new', component: AdNewComponent},
   { path:'ad/edit/:id', component: AdEditComponent},
   { path:'evolution', component:CoinEvolutionComponent},
+  { path:'', component: LandingComponent}
 ];

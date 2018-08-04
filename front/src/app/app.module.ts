@@ -20,6 +20,7 @@ import { MyprofileEditComponent } from './myprofile-edit/myprofile-edit.componen
 import { CapitalizeFirstPipe} from './pipes/capitalizeFirst.pipe';
 import { CoinEvolutionComponent } from './coin-evolution/coin-evolution.component';
 import { AdCityFilterPipe, AdHaveFilterPipe, AdWantFilterPipe } from  './pipes/adFilter.pipe';
+import { LandingComponent } from './landing/landing.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { AdCityFilterPipe, AdHaveFilterPipe, AdWantFilterPipe } from  './pipes/a
     AdCityFilterPipe,
     AdHaveFilterPipe,
     AdWantFilterPipe,
-    CoinEvolutionComponent
+    CoinEvolutionComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
