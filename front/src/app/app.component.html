@@ -28,13 +28,13 @@
   </button>
   <div class="collapse navbar-collapse header-right" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-        <li *ngIf="!sessionService.user"><a class="nav-item nav-link" [routerLink]="['/signup']">Signup</a></li>
-        <li *ngIf="!sessionService.user"><a class="nav-item nav-link"[routerLink]="['/login']">Login</a></li>
+        <li *ngIf="!sessionService.user"><a class="nav-item nav-link" [routerLink]="['/signup']">Sign Up</a></li>
+        <li *ngIf="!sessionService.user"><a class="nav-item nav-link"[routerLink]="['/login']">Log In</a></li>
   
         <li *ngIf="sessionService.user"><a class="nav-item nav-link"[routerLink]="['/ads']">Board  <i class="fas fa-bars"></i></a></li>
-        <li *ngIf="sessionService.user"><a class="nav-item nav-link"[routerLink]="['/evolution']">Coin evolution <i class="fas fa-chart-line"></i></a></li>
-        <li *ngIf="sessionService.user"><a class="nav-item nav-link"[routerLink]="['/profile']">My profile <i class="fas fa-user-circle"></i></a></li>
-        <li *ngIf="sessionService.user"><a class="nav-item nav-link" href="#" (click)="logout()">Logout <i class="fas fa-sign-out-alt"></i></a></li>
+        <li *ngIf="sessionService.user"><a class="nav-item nav-link"[routerLink]="['/evolution']">Currency Tools <i class="fas fa-chart-line"></i></a></li>
+        <li *ngIf="sessionService.user"><a class="nav-item nav-link"[routerLink]="['/profile']">My Profile <i class="fas fa-user-circle"></i></a></li>
+        <li *ngIf="sessionService.user"><a class="nav-item nav-link" href="#" (click)="logout()">Log Out <i class="fas fa-sign-out-alt"></i></a></li>
     </div>
   </div>
 </nav>

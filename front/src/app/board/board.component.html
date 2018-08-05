@@ -21,9 +21,43 @@
 </div>
 
 
-<div>
+<!-- <div>
   <div *ngFor="let ad of ads | adCityFilter:searchCity | adHaveFilter:searchHave | adWantFilter:searchWant">
       <a [routerLink]="['/ad',ad._id]"><h3>{{ ad.quantity }} {{ ad.have }} to
          {{ ad.want }} - {{ ad.city }} <br> by {{ ad.creator.username }} </h3></a>
   </div>
-</div>
+</div> -->
+
+
+
+
+<article class="card" *ngFor="let ad of ads | adCityFilter:searchCity | adHaveFilter:searchHave | adWantFilter:searchWant">
+        <div class="card__wrapper">
+      
+          <figure class="card__feature">
+            <img src="https://www.dropbox.com/s/z7gp2vanse5djxf/waves.jpg?raw=1" class="card__img" alt="waves" width="275" height="240">
+          </figure>
+      
+          <div class="card__box">
+      
+            <header class="card__item card__header">
+              <h6 class="card__item card__item--small card__label">Featured</h6>
+
+              <h2 class="card__item card__item--small card__title">{{ ad.quantity }} {{ ad.have }} to
+                    {{ ad.want }}</h2>
+              <h4>{{ ad.city }}</h4>
+              <h4>{{ ad.creator.username }}</h4>
+            </header>
+      
+            <hr class="card__item card__divider">
+      
+            <section class="card__item card__body">
+              <p>See the beautiful oceans of the Pacific coast where the water is so clean you can see the sand.</p>
+            </section>
+      
+          </div>
+      
+        </div>
+      </article>
+      
+      

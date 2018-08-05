@@ -7,21 +7,29 @@ import { ConvertService } from '../../services/convert.service';
   styleUrls: ['./coin-evolution.component.css']
 })
 export class CoinEvolutionComponent implements OnInit {
-  convertion;
+  currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"];
 
-  constructor(public convertService: ConvertService) {
-    // prueba
-    this.convert(10, 'USD', 'EUR');
-   }
+  haveConvert: string;
+  wantConvert: string;
+  quantityConvert: number;
+  resultConvert: number;
+  convertion: string;
+  today: number;
 
-  ngOnInit() {
-  }
+  constructor(public convertService: ConvertService) {}
+
+  ngOnInit() {}
 
   convert(amount, from, to) {
+    this.today = Date.now();
     this.convertService.convertCurrency(from, to).subscribe(res => {
-      this.convertion = Number(Object.values(res)[0]) * amount;
-      console.log(this.convertion);
-      console.log(Math.round(this.convertion * 100) / 100);
+      this.resultConvert = Number(Object.values(res)[0]) * amount;
+      console.log(this.resultConvert);
+
+      if(this.resultConvert === NaN) {
+        this.convertion = "Please, complete all options."
+      }
+      this.convertion = (Math.round(this.resultConvert * 100) / 100)+ "" + this.wantConvert;
     });
   }
 }

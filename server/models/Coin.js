@@ -5,8 +5,12 @@ const currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"]
 
 const coinSchema = new Schema(
   {
-    currency1: {type: String, enum: currencies},
-    currency2: {type: String, enum: currencies},
+    haveConvert: {type: String, enum: currencies},
+    wantConvert: {type: String, enum: currencies},
+    quantityConvert: Number,
+    resultConvert: Number,
+    convertion: String,
+    today: Date,
     // dates:  
     // evolution: 
   },

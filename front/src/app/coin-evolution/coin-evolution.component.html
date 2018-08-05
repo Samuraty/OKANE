@@ -1,3 +1,23 @@
-<p>
-  coin-evolution works!
-</p>
+<h1> Currency converter </h1>
+
+<form>
+  <label for="have">Have</label>
+  <select name="have" [(ngModel)]="haveConvert">
+      <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+  </select>
+  <br>
+  <label for="want">Want</label>
+  <select name="want" [(ngModel)]="wantConvert">
+      <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+  </select>
+  <label for="quantity">Quantity</label>
+  <input type="number" [(ngModel)]="quantityConvert" name="quantity" min = 0/>
+  <br>
+  <br>
+  <button (click)="convert(quantityConvert, haveConvert, wantConvert)"> Convert</button>
+  You would receive {{convertion}}
+  <br>
+  (exchange rate checked on {{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}})
+ 
+</form>
+
