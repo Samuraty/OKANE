@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 .snip1540 {
   box-shadow: none !important;
   color: #141414;
@@ -107,4 +108,20 @@ body {
   width: 100%;
   padding-left: 8vw;
   
+}
+
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.card:hover .card__wrapper {
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.05);
+}
+.card:hover .card__wrapper:after {
+  transform: scale(0.95) translateY(10px);
+}
+
+.card__wrapper {
+  border: 10px solid #ffffff;
 }
