@@ -1,23 +1,25 @@
 <h2>LISTA DE ANUNCIOS</h2>
 
-<a [routerLink]="['/ads/new']"><h2>Nuevo anuncio</h2></a>
+<a [routerLink]="['/ads/new']">
+    <h2>Nuevo anuncio</h2>
+</a>
 
 <div>
-  Filter your board!
-  <br>
-  <label for="city">City: </label>
-  <input type="text" placeholder="Search by City" [ngModel]="searchCity | capitalizeFirst" (ngModelChange)="searchCity=$event">
-  <br>
-  <label for="have">Currency you have: </label>
-  <select name="have" [(ngModel)]="searchHave">
-      <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-  </select>
-  <br>
-  <label for="want">Currency you want: </label>
-  <select name="want" [(ngModel)]="searchWant">
-      <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-  </select>
-  <br>
+    Filter your board!
+    <br>
+    <label for="city">City: </label>
+    <input type="text" placeholder="Search by City" [ngModel]="searchCity | capitalizeFirst" (ngModelChange)="searchCity=$event">
+    <br>
+    <label for="have">Currency you have: </label>
+    <select name="have" [(ngModel)]="searchHave">
+        <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+    </select>
+    <br>
+    <label for="want">Currency you want: </label>
+    <select name="want" [(ngModel)]="searchWant">
+        <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+    </select>
+    <br>
 </div>
 
 
@@ -31,33 +33,42 @@
 
 
 
-<article class="card" *ngFor="let ad of ads | adCityFilter:searchCity | adHaveFilter:searchHave | adWantFilter:searchWant">
-        <div class="card__wrapper">
-      
-          <figure class="card__feature">
-            <img src="https://www.dropbox.com/s/z7gp2vanse5djxf/waves.jpg?raw=1" class="card__img" alt="waves" width="275" height="240">
-          </figure>
-      
-          <div class="card__box">
-      
-            <header class="card__item card__header">
-              <h6 class="card__item card__item--small card__label">Featured</h6>
+<!-- <article class="card" *ngFor="let ad of ads | adCityFilter:searchCity | adHaveFilter:searchHave | adWantFilter:searchWant">
+    <div class="card__wrapper">
 
-              <h2 class="card__item card__item--small card__title">{{ ad.quantity }} {{ ad.have }} to
-                    {{ ad.want }}</h2>
-              <h4>{{ ad.city }}</h4>
-              <h4>{{ ad.creator.username }}</h4>
+        <figure class="card__feature">
+            <img src="https://www.dropbox.com/s/z7gp2vanse5djxf/waves.jpg?raw=1" class="card__img" alt="waves" width="275" height="240">
+        </figure>
+
+        <div class="card__box">
+
+            <header class="card__item card__header">
+                <h6 class="card__item card__item--small card__label">Featured</h6>
+
+                <h2 class="card__item card__item--small card__title">{{ ad.quantity }} {{ ad.have }} to {{ ad.want }}</h2>
+                <h4>{{ ad.city }}</h4>
+                <h4>{{ ad.creator.username }}</h4>
             </header>
-      
+
             <hr class="card__item card__divider">
-      
+
             <section class="card__item card__body">
-              <p>See the beautiful oceans of the Pacific coast where the water is so clean you can see the sand.</p>
+                <p>See the beautiful oceans of the Pacific coast where the water is so clean you can see the sand.</p>
             </section>
-      
-          </div>
-      
+
         </div>
-      </article>
-      
-      
+
+    </div>
+</article> -->
+<div class="ads-container">
+    <figure class="snip1540" *ngFor="let ad of ads | adCityFilter:searchCity | adHaveFilter:searchHave | adWantFilter:searchWant">
+        <div class="profile-image">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample1.jpg" alt="profile-sample1" />
+        </div>
+        <figcaption>
+            <h2>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }}</h2>
+            <h3>{{ ad.creator.username }} - {{ ad.city }}</h3>
+            <p>Which is worse, that everyone has his price, or that the price is always so low.</p>
+        </figcaption>
+    </figure>
+</div>
