@@ -1,12 +1,40 @@
-<form>
+<!-- <form>
   <h2> Login </h2>
   <label> Username </label>
-  <input type="text" [(ngModel)]="username" name="username"/>
+  <input type="text" [(ngModel)]="username" name="username" />
   <br>
   <label> Password </label>
-  <input type="password" [(ngModel)]="password" name="password"/>
+  <input type="password" [(ngModel)]="password" name="password" />
 
   <button (click)="login(username,password)"> login </button>
 </form>
-<p class="error"> {{ error }} </p>
+<p class="error"> {{ error }} </p> -->
 
+
+
+<div class="ui raised very padded center aligned text container segment">
+  <h1 class="ui header">Log in<i class="fas fa-sign-in-alt"></i></h1>
+  <br>
+  <div class="field">
+    <div class="ui left icon input">
+      <i class="fas fa-user"></i>
+      <input type="username" name="username" [(ngModel)]="username" placeholder="Username" autofocus="true">
+    </div>
+  </div>
+  <br>
+  <div class="field">
+    <div class="ui left icon input">
+      <i class="fas fa-unlock"></i>
+      <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
+    </div>
+  </div>
+  <br>
+
+  <div class="actions">
+    <button class=" ui large teal button" (click)="login(username,password)">Log in</button>
+  </div>
+  <br>
+  <p>Don't have an account?
+    <a [routerLink]="['/signup']"> Sign up </a>
+</div>
+<p class="error"> {{ error }} </p>

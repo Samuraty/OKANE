@@ -18,7 +18,7 @@
   <p class="error"> {{ error }} </p> -->
 
 
-   <!-- <div class="wrapper">
+<!-- <div class="wrapper"> 
     <h1>Ubuntu Login</h1>
     <section>
       <input class="main-form" type="text" name="usrname" placeholder="email"/>
@@ -30,9 +30,11 @@
     </footer>
   </div>  -->
 
-  <div class="container">
+
+
+<!-- <div class="container">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-sm-12">	
+        <div class="greypart col-md-8 col-md-offset-2 col-sm-12">	
           <div class="form">
         
             <form action="#">
@@ -63,4 +65,35 @@
           </div>
         </div>
       </div>
+    </div> -->
+
+
+<div class="ui raised very padded center aligned text container segment">
+  <h1 class="ui header">Sign up<i class="fas fa-sign-in-alt"></i></h1> 
+  <br>
+  <div class="field">
+    <div class="ui left icon input">
+      <i class="fas fa-user"></i>
+      <input type="username" name="username" [(ngModel)]="username" placeholder="Username" autofocus="true">
     </div>
+  </div>
+  <br>
+  <div class="field">
+    <div class="ui left icon input">
+      <i class="fas fa-envelope"></i>
+      <input type="email" name="email" [(ngModel)]="email" placeholder="Email Address" autofocus="true">
+    </div>
+  </div>
+  <br>
+  <div class="field">
+    <div class="ui left icon input">
+      <i class="fas fa-unlock"></i>
+      <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
+    </div>
+  </div>
+  <br>
+
+  <div class="actions">
+    <button class=" ui large teal button" (click)="signup(username, email, password)">Sign in</button>
+  </div>
+</div>
