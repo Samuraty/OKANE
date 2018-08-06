@@ -10,9 +10,7 @@ const adSchema = new Schema({
   quantity: Number,
   have: {type: String, enum: currencies},
   want: {type: String, enum: currencies},
-  comment: String,
-  ratio: Number,
-  total: Number
+  comment: String
 }, {
   timestamps: {
     createdAt: 'created_at',

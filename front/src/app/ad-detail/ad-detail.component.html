@@ -2,7 +2,9 @@
 
 <div *ngIf="ad">
   <h3>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }} - {{ ad.city }}
-    <br> by {{ ad.creator.username }} </h3>
+    <br> by {{ ad.creator.username }}. <br> 
+    Right now ({{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}}) <br> 
+    that amount corresponds to: {{convertion}}</h3>
   <br>
   <div *ngIf="canEdit">
     <button [routerLink]="['/ad/edit',ad._id]">Edit Ad</button>

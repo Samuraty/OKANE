@@ -11,8 +11,9 @@ const coinSchema = new Schema(
     resultConvert: Number,
     convertion: String,
     today: Date,
-    // dates:  
-    // evolution: 
+    date: any,
+    dateArray: [String],
+    ratioArray: [Number]
   },
   {
     timestamps: {
