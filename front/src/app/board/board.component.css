@@ -72,9 +72,10 @@
 }
 
 .snip1540 p {
-  font-size: 0.9em;
+  font-size: 1em;
   letter-spacing: 1px;
   opacity: 0.9;
+  font-weight: bold;
 }
 
 .snip1540 .icons {
@@ -135,6 +136,7 @@ body {
   margin-right: 5vw;
   font-size: 20px;
   font-weight: bold;
+  margin-top: -7vh;
 }
 
 a {
@@ -146,7 +148,11 @@ figure {
 }
 
 .box-top-board {
-  padding: 5vw 10vw;
+  padding-left: 8vw;
+  padding-top: 4vh;
+  background-color: #058392;
+  color: white;
+  height: 20vh;
 }
 
 .box-mini-filter {
@@ -158,3 +164,15 @@ label {
   margin-right: 1vw;
 }
 
+h2 {
+  color: #f9cf00;
+}
+
+p {
+  font-size: 50px;
+}
+
+input, select {
+  color: black;
+  font-weight: bold;
+}
