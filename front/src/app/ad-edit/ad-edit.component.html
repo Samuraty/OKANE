@@ -22,6 +22,9 @@
         <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
     </select>
     <br>
+    <label for="comment">Comment</label>
+    <textarea name="comment" id="comment" [(ngModel)]="ad.comment" cols="50" rows="5"></textarea>
+    <br>
     <div *ngIf="canEdit">
         <button (click)="edit(ad._id)"> Save </button>
     </div>

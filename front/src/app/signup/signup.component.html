@@ -74,7 +74,7 @@
   <div class="field">
     <div class="ui left icon input">
       <i class="fas fa-user"></i>
-      <input type="username" name="username" [(ngModel)]="username" placeholder="Username" autofocus="true">
+      <input type="username" name="username" [ngModel]="username | capitalizeFirst" (ngModelChange)="username=$event" placeholder="Username" autofocus="true">
     </div>
   </div>
   <br>
