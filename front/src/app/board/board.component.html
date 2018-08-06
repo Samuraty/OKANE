@@ -32,6 +32,30 @@
 </div>
 
 
+<div class="ads-container">
+
+    <figure class="card snip1540" *ngFor="let ad of ads | adCityFilter:searchCity | adHaveFilter:searchHave | adWantFilter:searchWant">
+
+        <div class="card__wrapper">
+            <div class="profile-image">
+                <img [src]="ad.creator.image" alt="profile-sample1" />
+            </div>
+            <figcaption>
+                <a [routerLink]="['/ad',ad._id]">
+                    <h2>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }}</h2>
+                    <h3>{{ ad.creator.username }} - {{ ad.city }}</h3>
+                </a>
+                <p>blabla</p>
+                <!-- <p>{{ ad.comment }}blabla</p> -->
+            </figcaption>
+
+        </div>
+    </figure>
+
+</div>
+
+
+
 <!-- <div>
   <div *ngFor="let ad of ads | adCityFilter:searchCity | adHaveFilter:searchHave | adWantFilter:searchWant">
       <a [routerLink]="['/ad',ad._id]"><h3>{{ ad.quantity }} {{ ad.have }} to
@@ -69,25 +93,3 @@
 
     </div>
 </article> -->
-
-
-<div class="ads-container">
-
-    <figure class="card snip1540" *ngFor="let ad of ads | adCityFilter:searchCity | adHaveFilter:searchHave | adWantFilter:searchWant">
-
-        <div class="card__wrapper">
-            <div class="profile-image">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample1.jpg" alt="profile-sample1" />
-            </div>
-            <figcaption>
-                <a [routerLink]="['/ad',ad._id]">
-                    <h2>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }}</h2>
-                    <h3>{{ ad.creator.username }} - {{ ad.city }}</h3>
-                </a>
-                <p>Which is worse, that everyone has his price, or that the price is always so low.</p>
-            </figcaption>
-
-        </div>
-    </figure>
-
-</div>

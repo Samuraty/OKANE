@@ -13,7 +13,8 @@ export class AdNewComponent implements OnInit {
   quantity:'',
   have:'',
   want:'',
-  creator:''
+  creator:'',
+  comment:''
   };
 
   currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"];
