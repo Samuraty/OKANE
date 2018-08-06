@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { AdService } from '../../services/ad.service';
 import { SessionService } from "../../services/session";
 import { UserService } from "../../services/user.service";
+import { FileUploader } from 'ng2-file-upload';
+import { environment } from "../../environments/environment";
 
 
 @Component({
@@ -12,6 +14,12 @@ import { UserService } from "../../services/user.service";
 })
 export class MyprofileEditComponent implements OnInit {
   user;
+  
+  uploader: FileUploader = new FileUploader({
+    url: `${environment.BASEURL}/api/user/edit`,
+    method: 'POST'
+  });
+  
 
   constructor(
     private sessionService: SessionService,
@@ -27,13 +35,22 @@ export class MyprofileEditComponent implements OnInit {
     )
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
+  
 
   edit(user) {
-    this.userService.edit(this.user).subscribe(user => {
-      this.user = user;
-      this.router.navigate(["/profile"]);
-    })
+    // this.userService.edit(this.user).subscribe(user => {
+    //   this.user = user;
+    //   this.router.navigate(["/profile"]);
+    // })
+    this.uploader.onBuildItemForm = (item, form) => {
+      form.append('username', this.user.username);
+      form.append('email', this.user.email);
+      form.append('_id', this.user._id);
+    };
+    this.uploader.uploadAll();
+    this.uploader.onCompleteItem = () => {
+      this.router.navigate(['/profile']);
+    };
   }
 }

@@ -21,7 +21,7 @@ import { CapitalizeFirstPipe} from './pipes/capitalizeFirst.pipe';
 import { CoinEvolutionComponent } from './coin-evolution/coin-evolution.component';
 import { AdCityFilterPipe, AdHaveFilterPipe, AdWantFilterPipe } from  './pipes/adFilter.pipe';
 import { LandingComponent } from './landing/landing.component';
-
+import { FileSelectDirective } from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { LandingComponent } from './landing/landing.component';
     AdHaveFilterPipe,
     AdWantFilterPipe,
     CoinEvolutionComponent,
-    LandingComponent
+    LandingComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

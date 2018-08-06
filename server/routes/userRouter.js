@@ -2,6 +2,9 @@ const express = require("express");
 const _ = require("lodash");
 const router = express.Router();
 const User = require("../models/User");
+const multer = require("multer");
+const uploadCloud = require('../config/cloudinary.js');
+
 
 const fields = Object.keys(_.omit(User.schema.paths, ["__v", "_id"]));
 
@@ -16,6 +19,7 @@ router.get("/", (req, res, next) => {
 // Create
 router.post("/", (req, res, next) => {
   const newUser = _.pick(req.body, fields);
+  
   User.create(newUser)
     .then(user => res.json(user))
     .catch(e => next(e));
@@ -33,10 +37,12 @@ router.get("/:id", (req, res, next) => {
 });
 
 // Update
-router.put("/edit/:id", (req, res, next) => {
+router.post("/edit", uploadCloud.single('file'), (req, res, next) => {
+  console.log('entra')
+  console.log(req.body)
   const updates = _.pick(req.body, fields);
-
-  User.findByIdAndUpdate(req.params.id, updates, { new: true })
+  if (req.file.url) updates.image = req.file.url;
+  User.findByIdAndUpdate(req.body._id, updates, { new: true })
     .then(user => res.json(user))
     .catch(e => next(e));
 });

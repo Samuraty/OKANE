@@ -3,13 +3,13 @@
 
 <div *ngIf="user">
   <label>Name</label>
-  <input type="text" [(ngModel)]="user.username" name="name" />
+  <input type="text" [(ngModel)]="user.username" name="username" />
   <br>
   <label>Email</label>
   <input type="text" [(ngModel)]="user.email" name="email" />
   <br>
   <label>Image</label>
-  <input type="file" [src]="user.image" name="image" />
+  <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
   <br>
   <button (click)="edit(user._id)"> Edit </button>
 </div>

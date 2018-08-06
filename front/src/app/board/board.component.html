@@ -1,25 +1,34 @@
 <h2>LISTA DE ANUNCIOS</h2>
 
+
 <a [routerLink]="['/ads/new']">
-    <h2>Nuevo anuncio</h2>
+    <button type="button" class="btn float-right create">CREA TU ANUNCIO</button>
 </a>
 
 <div>
-    Filter your board!
+    <h2>Encuentra lo que buscas!</h2>
     <br>
-    <label for="city">City: </label>
-    <input type="text" placeholder="Search by City" [ngModel]="searchCity | capitalizeFirst" (ngModelChange)="searchCity=$event">
-    <br>
-    <label for="have">Currency you have: </label>
-    <select name="have" [(ngModel)]="searchHave">
-        <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-    </select>
-    <br>
-    <label for="want">Currency you want: </label>
-    <select name="want" [(ngModel)]="searchWant">
-        <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-    </select>
-    <br>
+    <div>
+        <div class="d-inline-block">
+            <label for="city">City: </label>
+            <input type="text" placeholder="Search by City" [ngModel]="searchCity | capitalizeFirst" (ngModelChange)="searchCity=$event">
+            <br>
+        </div>
+        <div class="d-inline-block">
+            <label for="have">Currency you have: </label>
+            <select name="have" [(ngModel)]="searchHave">
+                <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+            </select>
+            <br>
+        </div>
+        <div class="d-inline-block">
+            <label for="want">Currency you want: </label>
+            <select name="want" [(ngModel)]="searchWant">
+                <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+            </select>
+            <br>
+        </div>
+    </div>
 </div>
 
 
@@ -63,21 +72,22 @@
 
 
 <div class="ads-container">
-    
+
     <figure class="card snip1540" *ngFor="let ad of ads | adCityFilter:searchCity | adHaveFilter:searchHave | adWantFilter:searchWant">
-        
+
         <div class="card__wrapper">
-        <div class="profile-image">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample1.jpg" alt="profile-sample1" />
+            <div class="profile-image">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample1.jpg" alt="profile-sample1" />
+            </div>
+            <figcaption>
+                <a [routerLink]="['/ad',ad._id]">
+                    <h2>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }}</h2>
+                    <h3>{{ ad.creator.username }} - {{ ad.city }}</h3>
+                </a>
+                <p>Which is worse, that everyone has his price, or that the price is always so low.</p>
+            </figcaption>
+
         </div>
-        <figcaption>
-            <a [routerLink]="['/ad',ad._id]"><h2>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }}</h2>
-            <h3>{{ ad.creator.username }} - {{ ad.city }}</h3></a>
-            <p>Which is worse, that everyone has his price, or that the price is always so low.</p>
-        </figcaption>
-        
-    </div>
     </figure>
 
 </div>
-
