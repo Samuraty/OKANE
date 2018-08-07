@@ -1,21 +1,31 @@
-<div class="box-top-board"></div>
- 
-<h1> Detalle del anuncio </h1>
+<div class="box-top-board coin-pic">
+  <h1> Post details </h1>
+</div>
 
 <app-chat></app-chat>
 
-<div *ngIf="ad">
-  <h3>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }} - {{ ad.city }}
-    <br> by {{ ad.creator.username }}. <br> 
-    Right now ({{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}}) <br> 
-    that amount corresponds to: {{convertion}}</h3>
-  <br>
-  <div *ngIf="canEdit">
-    <button [routerLink]="['/ad/edit',ad._id]">Edit Ad</button>
-  </div>
-  <div *ngIf="canDelete">
-    <button (click)="deleteAd()"> Delete </button>
-  </div>
+<div class="ads-container">
+  <figure class="card snip1540" *ngIf="ad">
+        <div class="card__wrapper">
+            <div class="profile-image">
+                <img [src]="ad.creator.image" alt="profile-sample1" />
+            </div>
+            <figcaption>
+                <h1 class="title">Message from {{ ad.creator.username }}: </h1>
+                <h2>"Hi! I want to exchange my {{ ad.quantity }} {{ ad.have }} for your {{convertion}} in {{ ad.city }}"
+                  <br> </h2>
+                <h3>  "{{ad.comment}}" <br><br></h3>
+                  <a>(converstion rate checked at {{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}}) </a>
+                <br>
+            </figcaption>
+        </div>
+        <div *ngIf="canEdit">
+            <button [routerLink]="['/ad/edit',ad._id]">Edit Ad</button>
+        </div>
+        <div *ngIf="canDelete">
+            <button (click)="deleteAd()"> Delete </button>
+        </div>
+  </figure>
 </div>
 
 <a [routerLink]="['/ads']"> Back to list</a>

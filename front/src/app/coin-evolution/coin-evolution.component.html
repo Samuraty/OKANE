@@ -1,35 +1,65 @@
-<div class="coin-pic"></div>
-<h1> Currency converter </h1>
-
+<div class="box-top-board coin-pic">
+    <h1> Currency Tools </h1>
+</div>
 <form>
-    <label for="have">Have</label>
-    <select name="have" [(ngModel)]="haveConvert">
-        <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-    </select>
+    <div class="d-inline-block box-mini-filter">
+        <label for="have">Have</label>
+        <select name="have" [(ngModel)]="haveConvert">
+            <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+        </select>
+        <br>
+    </div>
+    <div class="d-inline-block box-mini-filter">
+        <label for="want">Want</label>
+        <select name="want" [(ngModel)]="wantConvert">
+            <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+        </select>
+    </div>
+    <div class="d-inline-block box-mini-filter">
+        <label for="quantity">Quantity</label>
+        <input type="number" [(ngModel)]="quantityConvert" name="quantity" min=0 />
+        <br>
+    </div>
     <br>
-    <label for="want">Want</label>
-    <select name="want" [(ngModel)]="wantConvert">
-        <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-    </select>
-    <label for="quantity">Quantity</label>
-    <input type="number" [(ngModel)]="quantityConvert" name="quantity" min=0 />
-    <br>
-    <br>
-    <button (click)="convert(quantityConvert, haveConvert, wantConvert)"> Convert</button>
-    You would receive {{convertion}}
-    <br> (exchange rate checked on {{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}})
-
 </form>
 
-<button (click)="getDates(haveConvert,wantConvert)"> TEST</button>
-<br> {{ratioArray}}
-<br> {{dateArray}}
-<br>
+<div>
+    <button class="btn float-right create-convert" (click)="convert(quantityConvert, haveConvert, wantConvert)"> Convert</button>
+    <button class="btn float-right create-week" (click)="getDates(haveConvert,wantConvert)"> See last week currency evolution</button>
+    <br>
+    <div class="if-convert" *ngIf="convertion!==undefined">
+        <div>
+            <p>You would receive {{convertion}},
+            (exchange rate checked on {{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}})</p>
+        </div>
+    </div>
+</div>
 
-<div style="display: block">
-    <canvas baseChart 
-        [data]="doughnutChartData" 
-        [labels]="doughnutChartLabels" 
-        [chartType]="doughnutChartType">
-    </canvas>
+<div class="container-tools">
+    <div class="row">
+        <div *ngIf="ratioArray[6] !== undefined" class="chart-coin col" style="display: block">
+            <canvas baseChart 
+            [datasets]="doughnutChartData" 
+            [labels]="doughnutChartLabels" 
+            [chartType]="doughnutChartType" 
+            [options]="doughnutChartOptions">
+            </canvas>
+        </div>
+
+        <div class="col" *ngIf="ratioArray[0] !== undefined">
+            Right now, for 1 {{haveConvert}} you would receive {{ratioArray[6]}} {{wantConvert}}.
+            <table id="table">
+                <thead *ngIf="dateArray[0] !== undefined">
+                    <tr>
+                        <td>Date</td>
+                        <td>{{haveConvert}} / {{wantConvert}}</td>
+                    </tr>
+                </thead>
+                <tr *ngFor="let date of dateArray; let i=index">
+                    <td>{{ date }}</td>
+                    <td>{{ ratioArray[i] }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>

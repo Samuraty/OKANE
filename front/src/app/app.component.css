@@ -14,3 +14,8 @@ a {
   font-weight: bold;
   /*color: #058392;*/
 }
+
+img {
+  width: 3vw;
+  margin-right: 0.8vw;
+}

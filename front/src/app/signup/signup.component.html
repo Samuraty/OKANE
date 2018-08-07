@@ -1,99 +1,34 @@
-<!-- <form>
-  <div class="wrapper">
-    <h2> Signup </h2>
-    <section>
-      <label> Username </label>
-      <input class="main-form" type="text" [(ngModel)]="username" name="username" required/>
-      <br>
-      <label> Email </label>
-      <input class="main-form" type="email" [(ngModel)]="email" name="email" required/>
-      <br>
-      <label> Password </label>
-      <input class="main-form" type="password" [(ngModel)]="password" name="password" required/>
-      <br>
-      <button (click)="signup(username, email, password)"> SIGNUP </button>
-    </section>
-  </div>
-  </form>
-  <p class="error"> {{ error }} </p> -->
-
-
-<!-- <div class="wrapper"> 
-    <h1>Ubuntu Login</h1>
-    <section>
-      <input class="main-form" type="text" name="usrname" placeholder="email"/>
-        <input class="main-form" type="password" name="password" placeholder="password"/>
-      <button>Sign in</button>
-    </section>
-    <footer>
-      <input class="yolo" name="" value="" type="checkbox"/><h6>Remember me</h6>
-    </footer>
-  </div>  -->
-
-
-
-<!-- <div class="container">
-      <div class="row">
-        <div class="greypart col-md-8 col-md-offset-2 col-sm-12">	
-          <div class="form">
-        
-            <form action="#">
-  
-              <h1>Welcome back!</h1>
-  
-              <div class="input-group col-md-8 col-md-offset-2">
-                <input type="email" name="email" class="input email" autocomplete="off">
-                <label>E-Mail Address</label>
-              </div>
-            
-              <div class="input-group col-md-8 col-md-offset-2">
-                <input type="password" name="password" class="input password">
-                <label>Password</label>
-              </div>
-          
-              <div class="input-group">
-                <div class="col-md-4 col-md-offset-4">
-                  <button type="button">
-                    LOGIN
-                  </button>							
-                </div>
-              </div>
-              <div class="forgot">
-                <a href="#">Forgot Password?</a>
-              </div>
-            </form>
-          </div>
-        </div>
+<div class="signup-box">
+  <div class="ui raised very padded center aligned text container segment">
+    <h1 class="ui header">Sign Up
+      <i class="fas fa-sign-in-alt"></i>
+    </h1>
+    <br>
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="fas fa-user"></i>
+        <input type="username" name="username" [ngModel]="username | capitalizeFirst" (ngModelChange)="username=$event" placeholder="Username"
+          autofocus="true">
       </div>
-    </div> -->
-
-
-<div class="ui raised very padded center aligned text container segment">
-  <h1 class="ui header">Sign Up<i class="fas fa-sign-in-alt"></i></h1> 
-  <br>
-  <div class="field">
-    <div class="ui left icon input">
-      <i class="fas fa-user"></i>
-      <input type="username" name="username" [ngModel]="username | capitalizeFirst" (ngModelChange)="username=$event" placeholder="Username" autofocus="true">
     </div>
-  </div>
-  <br>
-  <div class="field">
-    <div class="ui left icon input">
-      <i class="fas fa-envelope"></i>
-      <input type="email" name="email" [(ngModel)]="email" placeholder="Email Address" autofocus="true">
+    <br>
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="fas fa-envelope"></i>
+        <input type="email" name="email" [(ngModel)]="email" placeholder="Email Address" autofocus="true">
+      </div>
     </div>
-  </div>
-  <br>
-  <div class="field">
-    <div class="ui left icon input">
-      <i class="fas fa-unlock"></i>
-      <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
+    <br>
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="fas fa-unlock"></i>
+        <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
+      </div>
     </div>
-  </div>
-  <br>
+    <br>
 
-  <div class="actions">
-    <button class=" ui large teal button" (click)="signup(username, email, password)">Sign In</button>
+    <div class="actions">
+      <button class=" ui large teal button" (click)="signup(username, email, password)">Sign In</button>
+    </div>
   </div>
 </div>

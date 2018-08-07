@@ -2,3 +2,10 @@ i {
   padding: 2vh;
 }
 
+.signup-box {
+  margin-top: 15vh;
+}
+
+.ui.teal.button, .ui.teal.buttons .button {
+  background-color: #368090;
+}

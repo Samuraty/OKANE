@@ -9,8 +9,18 @@ import { DatesService } from '../../services/dates.service';
 })
 export class CoinEvolutionComponent implements OnInit {
   public doughnutChartLabels: Array<String> = [];
-  public doughnutChartData: number[] = [];
+  public doughnutChartData = [{
+    data: [],
+    lineTension: 0
+    }]
   public doughnutChartType: String = 'line';
+  public doughnutChartOptions = {
+    legend: {
+      display:false,
+    },
+    width: 800,
+    height: 500,
+  };
   
   
   currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"];
@@ -36,10 +46,11 @@ export class CoinEvolutionComponent implements OnInit {
       this.resultConvert = Number(Object.values(res)[0]) * amount;
       console.log(this.resultConvert);
 
-      if(this.resultConvert === NaN) {
-        this.convertion = "Please, complete all options."
+      if(isNaN(this.resultConvert)) {
+        this.convertion = 0 + " " + to
+      } else {
+      this.convertion = (Math.round(this.resultConvert * 100) / 100)+ " " + to;
       }
-      this.convertion = (Math.round(this.resultConvert * 100) / 100)+ "" + to;
     });
   }
 
@@ -67,10 +78,9 @@ export class CoinEvolutionComponent implements OnInit {
     this.datesService.datesCurrency(fromCurrenty, toCurrency, firstDate, lastDate).subscribe(res => {
       this.ratioArray = (Object.values((Object.values(res)[0])));
       this.dateArray = (Object.keys((Object.values(res)[0])));
-      console.log(this.ratioArray);
-      console.log(this.dateArray);
       this.doughnutChartLabels = this.dateArray;
-      this.doughnutChartData = this.ratioArray;
+      this.doughnutChartData[0].data = this.ratioArray;
+      console.log(this.doughnutChartLabels, this.doughnutChartData )
     });
 
   }
