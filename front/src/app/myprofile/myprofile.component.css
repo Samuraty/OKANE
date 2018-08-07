@@ -68,3 +68,11 @@
 #reviewStars-input #star-5 {
   left: 265px;
 }
+
+.box-top-board {
+  padding-left: 8vw;
+  padding-top: 4vh;
+  background-color: #058392;
+  color: white;
+  height: 20vh;
+}

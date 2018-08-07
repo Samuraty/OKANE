@@ -22,6 +22,9 @@ import { CoinEvolutionComponent } from './coin-evolution/coin-evolution.componen
 import { AdCityFilterPipe, AdHaveFilterPipe, AdWantFilterPipe } from  './pipes/adFilter.pipe';
 import { LandingComponent } from './landing/landing.component';
 import { FileSelectDirective } from 'ng2-file-upload';
+import { ChatComponent } from './chat/chat.component';
+import { ChatService } from '../services/chat.service';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { FileSelectDirective } from 'ng2-file-upload';
     AdWantFilterPipe,
     CoinEvolutionComponent,
     LandingComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
     FormsModule,
     HttpModule
   ],
-  providers: [SessionService, AdService, UserService],
+  providers: [SessionService, AdService, UserService, ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

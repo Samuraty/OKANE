@@ -1,4 +1,8 @@
+<div class="box-top-board"></div>
+ 
 <h1> Detalle del anuncio </h1>
+
+<app-chat></app-chat>
 
 <div *ngIf="ad">
   <h3>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }} - {{ ad.city }}
@@ -15,3 +19,4 @@
 </div>
 
 <a [routerLink]="['/ads']"> Back to list</a>
+

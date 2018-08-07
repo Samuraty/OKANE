@@ -14,7 +14,15 @@ export class AdDetailComponent implements OnInit {
   convertion: string;
   today: number;
 
-  ad;
+  ad = {
+    quantity: "",
+    have: "",
+    want: "",
+    creator: {
+      _id:""
+    },
+    _id:""
+  };
   user;
   canDelete: boolean = false;
   canEdit: boolean = false;
