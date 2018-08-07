@@ -8,8 +8,8 @@ import { DatesService } from '../../services/dates.service';
   styleUrls: ['./coin-evolution.component.css']
 })
 export class CoinEvolutionComponent implements OnInit {
-  public doughnutChartLabels: Array<String> = ['Yes', 'No', 'Don\'t know'];
-  public doughnutChartData: number[] = [1, 4, 7 , 2, 4, 6];
+  public doughnutChartLabels: Array<String> = [];
+  public doughnutChartData: number[] = [];
   public doughnutChartType: String = 'line';
   
   
@@ -69,7 +69,10 @@ export class CoinEvolutionComponent implements OnInit {
       this.dateArray = (Object.keys((Object.values(res)[0])));
       console.log(this.ratioArray);
       console.log(this.dateArray);
+      this.doughnutChartLabels = this.dateArray;
+      this.doughnutChartData = this.ratioArray;
     });
+
   }
 
 
