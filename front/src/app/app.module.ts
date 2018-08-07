@@ -24,7 +24,7 @@ import { LandingComponent } from './landing/landing.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { ChatComponent } from './chat/chat.component';
 import { ChatService } from '../services/chat.service';
-
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,8 @@ import { ChatService } from '../services/chat.service';
     RouterModule.forRoot(routes),
     FormsModule,
     HttpModule,
-    FileUploadModule
+    FileUploadModule,
+    ChartsModule
   ],
   providers: [SessionService, AdService, UserService, ChatService],
   bootstrap: [AppComponent]

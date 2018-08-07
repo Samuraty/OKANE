@@ -8,6 +8,11 @@ import { DatesService } from '../../services/dates.service';
   styleUrls: ['./coin-evolution.component.css']
 })
 export class CoinEvolutionComponent implements OnInit {
+  public doughnutChartLabels: Array<String> = ['Yes', 'No', 'Don\'t know'];
+  public doughnutChartData: number[] = [1, 4, 7 , 2, 4, 6];
+  public doughnutChartType: String = 'line';
+  
+  
   currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"];
 
   haveConvert: string;
