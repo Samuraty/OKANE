@@ -7,6 +7,7 @@ import { ChatService } from '../../services/chat.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
+  chatBox;
 
   constructor(public chatService: ChatService) { }
 

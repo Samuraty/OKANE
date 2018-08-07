@@ -75,7 +75,7 @@ require('./passport')(app);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 
@@ -91,5 +91,9 @@ app.use('/api/user', userRouter)
 
 const adRouter = require('./routes/adRouter');
 app.use('/api/ad', adRouter);
+
+app.use(function(req, res) {
+  res.sendfile(__dirname + '/public/index.html');
+ });
 
 module.exports = app;

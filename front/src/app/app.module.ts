@@ -21,7 +21,7 @@ import { CapitalizeFirstPipe} from './pipes/capitalizeFirst.pipe';
 import { CoinEvolutionComponent } from './coin-evolution/coin-evolution.component';
 import { AdCityFilterPipe, AdHaveFilterPipe, AdWantFilterPipe } from  './pipes/adFilter.pipe';
 import { LandingComponent } from './landing/landing.component';
-import { FileSelectDirective } from 'ng2-file-upload';
+import { FileUploadModule } from 'ng2-file-upload';
 import { ChatComponent } from './chat/chat.component';
 import { ChatService } from '../services/chat.service';
 
@@ -43,14 +43,14 @@ import { ChatService } from '../services/chat.service';
     AdWantFilterPipe,
     CoinEvolutionComponent,
     LandingComponent,
-    FileSelectDirective,
     ChatComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpModule
+    HttpModule,
+    FileUploadModule
   ],
   providers: [SessionService, AdService, UserService, ChatService],
   bootstrap: [AppComponent]

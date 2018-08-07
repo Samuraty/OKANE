@@ -10,6 +10,9 @@ import 'jquery';
   styleUrls: ["./signup.component.css"]
 })
 export class SignupComponent implements OnInit {
+  username;
+  email;
+  password;
   constructor(private sessionService: SessionService, private router: Router) {}
 
   ngOnInit() {

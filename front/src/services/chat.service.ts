@@ -1,5 +1,6 @@
 import { Injectable } from "../../node_modules/@angular/core";
 import * as io from 'socket.io-client';
+import { environment } from '../environments/environment'
 
 interface Message {
   origin:string;
@@ -11,11 +12,13 @@ export class ChatService {
 
   socket:SocketIOClient.Socket;
   messages:Array<Message> = [{origin: "", content:""}];
+  BASE_URL: string = environment.BASEURL;
 
   constructor(){
 
     // Connect to websocket for chat
-    this.socket = io('localhost:3000');
+    
+    this.socket = io(this.BASE_URL);
     this.socket.on('connect',() =>console.log("Connected to WS"));
 
     // Save messages into array as they arrive from server

@@ -8,6 +8,9 @@ import { Router } from '../../../node_modules/@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  username;
+  password;
+  error;
   constructor(private sessionService:SessionService, private router:Router) { }
 
   ngOnInit() {

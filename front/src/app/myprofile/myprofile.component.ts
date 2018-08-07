@@ -11,6 +11,9 @@ import { AdService } from '../../services/ad.service';
 })
 export class MyprofileComponent implements OnInit {
   user = {
+    username:"",
+    email:"",
+    _id:"",
     image:'../../assets/images/profilepic.png',
   };
   ads;
