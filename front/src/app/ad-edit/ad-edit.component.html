@@ -1,14 +1,13 @@
-<div class="box-top-board"></div>
-
-<h2> Edit your ad </h2>
-
+<div class="box-top-board coin-pic">
+    <h1> Edit Your Ad </h1>
+</div>
 
 <div *ngIf="ad">
     <label>City</label>
-    <input type="text" [ngModel]="ad.city | capitalizeFirst" (ngModelChange)="ad.city=$event" name="city"/>
+    <input type="text" [ngModel]="ad.city | capitalizeFirst" (ngModelChange)="ad.city=$event" name="city" />
     <br>
     <label>Quantity</label>
-    <input type="number" [(ngModel)]="ad.quantity" name="quantity" min = 0/>
+    <input type="number" [(ngModel)]="ad.quantity" name="quantity" min=0 />
     <br>
     <label for="have">Have</label>
     <select name="have" [(ngModel)]="ad.have">
@@ -21,8 +20,11 @@
     </select>
     <br>
     <label for="comment">Comment</label>
-    <textarea name="comment" id="comment" [(ngModel)]="ad.comment" cols="50" rows="5"></textarea>
-    <br>
+    <textarea name="comment" id="comment" [(ngModel)]="ad.comment" cols="40" rows="2" maxlength="{{maxLength}}"></textarea>
+
+    <div id="characters">
+        <span>Characters left: {{maxLength - ad.comment.length}}</span>
+    </div>
     <div *ngIf="canEdit">
         <button (click)="edit(ad._id)"> Save </button>
     </div>

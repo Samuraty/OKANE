@@ -46,7 +46,9 @@ export class CoinEvolutionComponent implements OnInit {
       this.resultConvert = Number(Object.values(res)[0]) * amount;
       console.log(this.resultConvert);
 
-      if(isNaN(this.resultConvert)) {
+      if(from == undefined || to == undefined) {
+        this.convertion = "... PLEASE, SELECT CURRENCIES!"
+      } else if(isNaN(this.resultConvert)) {
         this.convertion = 0 + " " + to
       } else {
       this.convertion = (Math.round(this.resultConvert * 100) / 100)+ " " + to;

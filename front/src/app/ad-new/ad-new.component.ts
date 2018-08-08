@@ -18,6 +18,7 @@ export class AdNewComponent implements OnInit {
   };
 
   currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"];
+  maxLength = 40; //máximo caracteres para comentarios.
 
   constructor(private adService: AdService, private router: Router, public sessionService: SessionService) {
     sessionService.isLogged().subscribe(user => this.ad.creator = user._id)

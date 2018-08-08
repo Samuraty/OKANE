@@ -1,8 +1,7 @@
-
 <div class="box-top-board coin-pic">
-    <h1>Encuentra lo que buscas!</h1>
+    <h1>Find what you're looking for!</h1>
     <a [routerLink]="['/ads/new']">
-        <button type="button" class="btn float-right create">CREA TU ANUNCIO</button>
+        <button type="button" class="btn float-right create">POST YOUR AD</button>
     </a>
     <br>
     <div>
@@ -13,14 +12,14 @@
         </div>
         <div class="d-inline-block box-mini-filter">
             <label for="have">Currency you have: </label>
-            <select name="have" [(ngModel)]="searchHave">
+            <select name="have" [(ngModel)]="searchWant">
                 <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
             </select>
             <br>
         </div>
         <div class="d-inline-block box-mini-filter">
             <label for="want">Currency you want: </label>
-            <select name="want" [(ngModel)]="searchWant">
+            <select name="want" [(ngModel)]="searchHave">
                 <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
             </select>
             <br>
@@ -30,22 +29,18 @@
 
 
 <div class="ads-container">
-
     <figure class="card snip1540" *ngFor="let ad of ads | adCityFilter:searchCity | adHaveFilter:searchHave | adWantFilter:searchWant">
-
         <div class="card__wrapper">
             <div class="profile-image">
                 <img [src]="ad.creator.image" alt="profile-sample1" />
             </div>
+            <a [routerLink]="['/ad',ad._id]">
             <figcaption>
-                <a [routerLink]="['/ad',ad._id]">
-                    <h2>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }}</h2>
-                    <h3>{{ ad.creator.username }} - {{ ad.city }}</h3>
-                </a>
+                <h2>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }}</h2>
+                <h3>{{ ad.creator.username }} - {{ ad.city }}</h3>
                 <p>{{ ad.comment }}</p>
             </figcaption>
-
+            </a>
         </div>
     </figure>
-
 </div>

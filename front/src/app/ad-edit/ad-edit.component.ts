@@ -14,7 +14,8 @@ export class AdEditComponent implements OnInit {
   user;
   canEdit: boolean = false;
 
-  currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"]
+  currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"];
+  maxLength = 40;  //máximo caracteres para comentarios.
 
   constructor(
     private sessionService: SessionService,

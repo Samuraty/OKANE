@@ -8,14 +8,14 @@
       <div class="ui left icon input">
         <i class="fas fa-user"></i>
         <input type="username" name="username" [ngModel]="username | capitalizeFirst" (ngModelChange)="username=$event" placeholder="Username"
-          autofocus="true">
+          autofocus="true" #myUsr="ngModel" (keyup.enter)="login(username,password)" required>
       </div>
     </div>
     <br>
     <div class="field">
       <div class="ui left icon input">
         <i class="fas fa-unlock"></i>
-        <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
+        <input type="password" name="password" [(ngModel)]="password" placeholder="Password" #myPass="ngModel" required (keyup.enter)="login(username,password)">
       </div>
     </div>
     <br>
@@ -25,7 +25,18 @@
     </div>
     <br>
     <p>Don't have an account?
-      <a [routerLink]="['/signup']"> Sign Up </a>
+    <a [routerLink]="['/signup']"> Sign Up </a>
+
+    <div *ngIf="myUsr.errors && (myUsr.dirty || myUsr.touched)">
+      <p class="error" [hidden]="!myUsr.errors.required">
+        Please, enter your usermail.
+      </p>
+    </div>
+    <div *ngIf="myPass.errors && (myPass.dirty || myPass.touched)">
+      <p class="error" [hidden]="!myPass.errors.required">
+        Please, enter your password.
+      </p>
+    </div>
     <p class="error"> {{ error }} </p>
   </div>
 </div>

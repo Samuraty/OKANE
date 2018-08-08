@@ -98,10 +98,6 @@
 }
 
 
-/* Demo purposes only */
-
-
-
 body {
   background-color: #212121;
   text-align: center;
@@ -109,13 +105,12 @@ body {
 
 .ads-container {
   width: 100%;
-  padding-left: 7vw;
-  padding-right: 7vw;
+  padding-left: 6vw;
+  padding-right: 6vw;
 }
 
 
 .card:hover {
-  cursor: pointer;
   transform: scale(1.05);
 }
 .card:hover .card__wrapper {
@@ -155,16 +150,21 @@ figure {
 }
 
 .box-mini-filter {
-  padding-right: 4vw;
-  padding-left: 1vw;
+  padding-right: 2vw;
 }
 
 label {
   margin-right: 1vw;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 h2 {
   color: #f9cf00;
+}
+
+h3 {
+  color: black;
 }
 
 p {
@@ -181,5 +181,4 @@ input, select {
   background-image: url("../../assets/images/currency-banner.jpg");
   background-size: cover;
   background-position: 100%;
-  
 }

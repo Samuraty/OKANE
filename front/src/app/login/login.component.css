@@ -6,6 +6,25 @@ i {
   margin-top: 15vh;
 }
 
-.ui.teal.button, .ui.teal.buttons .button {
+.ui.teal.button,
+.ui.teal.buttons .button {
   background-color: #368090;
+}
+
+.ng-touched {
+  border-color: blue;
+}
+
+.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+.ng-touched.ng-valid {
+  border-color: green;
+}
+
+.error {
+  color: red;
+  margin-top: 15px;
+  font-weight: bold;
 }

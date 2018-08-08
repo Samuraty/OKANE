@@ -1,12 +1,14 @@
-<h1> Añade un nuevo anuncio </h1>
+<div class="box-top-board coin-pic">
+    <h1> Create Your Post </h1>
+</div>
 <a [routerLink]="['/ads']"> Vuelve a la lista</a>
 
-<form>
+<!-- <form>
     <label for="city">City</label>
-    <input type="text" [ngModel]="ad.city | capitalizeFirst" (ngModelChange)="ad.city=$event" name="city"/>
+    <input type="text" [ngModel]="ad.city | capitalizeFirst" (ngModelChange)="ad.city=$event" name="city" />
     <br>
     <label for="quantity">Quantity</label>
-    <input type="number" [(ngModel)]="ad.quantity" name="quantity" min = 0/>
+    <input type="number" [(ngModel)]="ad.quantity" name="quantity" min=0 />
     <br>
     <label for="have">Have</label>
     <select name="have" [(ngModel)]="ad.have">
@@ -19,8 +21,56 @@
     </select>
     <br>
     <label for="comment">Comment</label>
-    <textarea name="comment" id="comment" [(ngModel)]="ad.comment" cols="40" rows="2" maxlength="40"></textarea>
-    <br>
+    <textarea name="comment" id="comment" [(ngModel)]="ad.comment" cols="40" rows="2" maxlength={{maxLength}}></textarea>
+    
+    <div id="characters">
+        <span>Characters left: {{maxLength - ad.comment.length}}</span>
+    </div>
     <button (click)="newAd()"> Create</button>
-</form>
+</form> -->
 
+
+
+<div class="container">
+    <h1 id="title">Send us your feedback!</h1>
+    <br />
+
+
+    <form id="survey-form" action="" method="post" autocomplete="on">
+
+        <label id="name-label" for="Name">* Name</label>
+        <input autofocus type="text" id="name" class="input-field" placeholder="Enter your Name" name="name" required>
+        <br />
+        <br />
+        <label id="email-label" for="email">* Email </label>
+        <input type="email" name="email" id="email" class="input-field" required placeholder="Enter your Email">
+        <br />
+        <br />
+
+        <label id="number-label" for="age">* Age</label> 
+        <input type="number" name="age" id="number" min="1" max="125" class="input-field" placeholder="Age">
+        <br/>
+        <br />
+
+        <label for="gender"> *Gender</label> 
+        <select id="dropdown" class="dropdown" name="gender">
+            <option disabled value="Select an option">Select an option</option>
+            <option>--</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="other">Other</option>
+        </select>
+        <br />
+        <br />
+        <br /> What is your current career? Does it match your dream career?
+        <br>
+        <br>
+
+        <textarea id="comments" class="input-field" name="comment" placeholder=""></textarea>
+        <br />
+        <br />
+
+        <button id="submit" type="submit">Submit</button>
+
+    </form>
+</div>

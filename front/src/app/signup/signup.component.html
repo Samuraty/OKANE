@@ -8,21 +8,22 @@
       <div class="ui left icon input">
         <i class="fas fa-user"></i>
         <input type="username" name="username" [ngModel]="username | capitalizeFirst" (ngModelChange)="username=$event" placeholder="Username"
-          autofocus="true">
+        autofocus="true" #myUsername="ngModel" (keyup.enter)="signup(username, email, password)" required>
       </div>
     </div>
     <br>
     <div class="field">
       <div class="ui left icon input">
         <i class="fas fa-envelope"></i>
-        <input type="email" name="email" [(ngModel)]="email" placeholder="Email Address" autofocus="true">
+        <input type="email" name="email" [(ngModel)]="email" placeholder="Email Address" autofocus="true"#myEmail="ngModel"
+        (keyup.enter)="signup(username, email, password)" required>
       </div>
     </div>
     <br>
     <div class="field">
       <div class="ui left icon input">
         <i class="fas fa-unlock"></i>
-        <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
+        <input type="password" name="password" [(ngModel)]="password" placeholder="Password" #myPassword="ngModel" (keyup.enter)="signup(username, email, password)" required>
       </div>
     </div>
     <br>
@@ -30,5 +31,23 @@
     <div class="actions">
       <button class=" ui large teal button" (click)="signup(username, email, password)">Sign In</button>
     </div>
+  
+
+  <div *ngIf="myUsername.errors && (myUsername.dirty || myUsername.touched)">
+    <p class="error" [hidden]="!myUsername.errors.required">
+      Usermail is required!
+    </p>
   </div>
+  <div *ngIf="myEmail.errors && (myEmail.dirty || myEmail.touched)">
+    <p class="error" [hidden]="!myEmail.errors.required">
+      Email is required!
+    </p>
+  </div>
+  <div *ngIf="myPassword.errors && (myPassword.dirty || myPassword.touched)">
+    <p class="error" [hidden]="!myPassword.errors.required">
+      Password is required!
+    </p>
+  </div>
+</div>
+
 </div>

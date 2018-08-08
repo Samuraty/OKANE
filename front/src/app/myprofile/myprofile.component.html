@@ -1,20 +1,24 @@
-<div class="box-top-board"></div>
-<h1>My Profile</h1>
+<div class="box-top-board coin-pic">
+  <h1> My Profile </h1>
+</div>
 
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-12 col-md-4">
       <h3>
         <label for="name">Name: {{user.username}}</label>
       </h3>
       <h3>
         <label for="email">Email: {{user.email}}</label>
       </h3>
+      <h3>
+        <label for="since">Member since: {{user.created_at | date: "dd MMMM y"}}</label>
+      </h3>
       <img [src]="user.image" width=300/>
       <br>
       <button [routerLink]="['/edit',user._id]">Edit profile</button>
     </div>
-  
+
 
 
     <!-- <div id="reviewStars-input">
@@ -35,7 +39,7 @@
     </div> -->
 
 
-      <!-- <div>
+    <!-- <div>
       <div *ngFor="let myads of adList">
         <a [routerLink]="['/ad',myads._id]">
           <h3>{{ myads.quantity }} {{ myads.have }} to {{ myads.want }} - {{ myads.city }}
@@ -45,21 +49,21 @@
     </div> -->
 
 
-    <div class="col">
-    <h1>Tus Anuncios</h1>
-    <div class="ads-container">
-      <figure class="card snip1540" *ngFor="let myads of adList">
-        <div class="card__wrapper">
-          <a [routerLink]="['/ad',myads._id]">
-            <figcaption>
-              <h2>{{ myads.quantity }} {{ myads.have }} to {{ myads.want }}</h2>
-              <h3>{{ myads.creator.username }} - {{ myads.city }}</h3>
-              <p>{{ myads.comment }}</p>
-            </figcaption>
-          </a>
-        </div>
-      </figure>
-    </div>
+    <div class="contain-ad col-12 col-md-8">
+      <h1>My Posts</h1>
+      <div class="ads-container">
+        <figure class="card snip1540" *ngFor="let myads of adList">
+          <div class="card__wrapper">
+            <a [routerLink]="['/ad',myads._id]">
+              <figcaption>
+                <h2>{{ myads.quantity }} {{ myads.have }} to {{ myads.want }}</h2>
+                <h3>{{ myads.creator.username }} - {{ myads.city }}</h3>
+                <p>{{ myads.comment }}</p>
+              </figcaption>
+            </a>
+          </div>
+        </figure>
+      </div>
     </div>
   </div>
 </div>

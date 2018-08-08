@@ -3,19 +3,19 @@
     <div class="form-wrapper">
         <form>
             <div class="d-inline-block box-mini-filter">
-                <label for="have">Have</label>
+                <label for="have">From: </label>
                 <select name="have" [(ngModel)]="haveConvert">
                     <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
                 </select>
             </div>
             <div class="d-inline-block box-mini-filter">
-                <label for="want">Want</label>
+                <label for="want">To: </label>
                 <select name="want" [(ngModel)]="wantConvert">
                     <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
                 </select>
             </div>
             <div class="d-inline-block box-mini-filter">
-                <label for="quantity">Quantity</label>
+                <label for="quantity">Quantity: </label>
                 <input type="number" [(ngModel)]="quantityConvert" name="quantity" min=0 />
             </div>
         </form>
@@ -31,7 +31,7 @@
 <div>
     <div class="if-convert" *ngIf="convertion!==undefined">
         <div>
-            <p>You would receive {{convertion}}, (exchange rate checked on {{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}})</p>
+            <p>You would receive {{convertion}} (exchange rate checked on {{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}}).</p>
         </div>
     </div>
 </div>

@@ -1,6 +1,8 @@
 <div class="box-top-board coin-pic">
-    <h1> Post details </h1>
-    <a [routerLink]="['/ads']"> Back to list</a>
+    <h1> Post Details </h1>
+    <div>
+        <a [routerLink]="['/ads']"><i class="far fa-arrow-alt-circle-left"></i>Back to Board</a>
+    </div>
 </div>
 
 <div class="container">
@@ -28,12 +30,10 @@
                             <br>
                             <br>
                         </h3>
-                        <a>(converstion rate checked at {{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}}) </a>
-                        <br>
+                        <p>(converstion rate checked at: </p>
+                        <p>{{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}})</p>
                     </figcaption>
                 </div>
-
-
             </figure>
         </div>
 
