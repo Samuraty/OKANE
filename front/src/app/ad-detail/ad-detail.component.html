@@ -1,32 +1,44 @@
 <div class="box-top-board coin-pic">
-  <h1> Post details </h1>
+    <h1> Post details </h1>
+    <a [routerLink]="['/ads']"> Back to list</a>
 </div>
 
-<app-chat></app-chat>
+<div class="container">
+    <div class="row">
+        <div class="ads-container col-12 col-md-6">
+            <figure class="card snip1540" *ngIf="ad">
+                <div class="card__wrapper">
+                    <div class="profile-image">
+                        <img [src]="ad.creator.image" alt="profile-sample1" />
+                    </div>
+                    <div class="but-container">
+                        <div class="d-inline-block float-right" *ngIf="canDelete">
+                            <button class="create" (click)="deleteAd()"> Delete </button>
+                        </div>
+                        <div class="d-inline-block float-right" *ngIf="canEdit">
+                            <button class="create" [routerLink]="['/ad/edit',ad._id]">Edit Ad</button>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <h1 class="title">Message from {{ ad.creator.username }}: </h1>
+                        <h2>"Hi! I want to exchange my {{ ad.quantity }} {{ ad.have }} for your {{convertion}} in {{ ad.city
+                            }}"
+                            <br> </h2>
+                        <h3> "{{ad.comment}}"
+                            <br>
+                            <br>
+                        </h3>
+                        <a>(converstion rate checked at {{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}}) </a>
+                        <br>
+                    </figcaption>
+                </div>
 
-<div class="ads-container">
-  <figure class="card snip1540" *ngIf="ad">
-        <div class="card__wrapper">
-            <div class="profile-image">
-                <img [src]="ad.creator.image" alt="profile-sample1" />
-            </div>
-            <figcaption>
-                <h1 class="title">Message from {{ ad.creator.username }}: </h1>
-                <h2>"Hi! I want to exchange my {{ ad.quantity }} {{ ad.have }} for your {{convertion}} in {{ ad.city }}"
-                  <br> </h2>
-                <h3>  "{{ad.comment}}" <br><br></h3>
-                  <a>(converstion rate checked at {{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}}) </a>
-                <br>
-            </figcaption>
+
+            </figure>
         </div>
-        <div *ngIf="canEdit">
-            <button [routerLink]="['/ad/edit',ad._id]">Edit Ad</button>
+
+        <div class="chat-ad col-12 col-md-6">
+            <app-chat></app-chat>
         </div>
-        <div *ngIf="canDelete">
-            <button (click)="deleteAd()"> Delete </button>
-        </div>
-  </figure>
+    </div>
 </div>
-
-<a [routerLink]="['/ads']"> Back to list</a>
-
