@@ -1,45 +1,65 @@
 <div class="box-top-board"></div>
- 
+<h1>My Profile</h1>
 
-<h2>My Profile</h2>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>
+        <label for="name">Name: {{user.username}}</label>
+      </h3>
+      <h3>
+        <label for="email">Email: {{user.email}}</label>
+      </h3>
+      <img [src]="user.image" width=300/>
+      <br>
+      <button [routerLink]="['/edit',user._id]">Edit profile</button>
+    </div>
+  
 
-<div>
-  <div>
-    <h3>
-      <label for="name">Name: {{user.username}}</label>
-    </h3>
-    <h3>
-      <label for="email">Email: {{user.email}}</label>
-    </h3>
-    <img [src]="user.image" width=300/>
-    <br>
-    <button [routerLink]="['/edit',user._id]">Edit profile</button>
-  </div>
-</div>
+
+    <!-- <div id="reviewStars-input">
+    <input id="star-4" type="radio" name="reviewStars" />
+    <label title="gorgeous" for="star-4"></label>
+
+    <input id="star-3" type="radio" name="reviewStars" />
+    <label title="good" for="star-3"></label>
+
+    <input id="star-2" type="radio" name="reviewStars" />
+    <label title="regular" for="star-2"></label>
+
+    <input id="star-1" type="radio" name="reviewStars" />
+    <label title="poor" for="star-1"></label>
+
+    <input id="star-0" type="radio" name="reviewStars" />
+    <label title="bad" for="star-0"></label>
+    </div> -->
 
 
-<div id="reviewStars-input">
-  <input id="star-4" type="radio" name="reviewStars" />
-  <label title="gorgeous" for="star-4"></label>
+      <!-- <div>
+      <div *ngFor="let myads of adList">
+        <a [routerLink]="['/ad',myads._id]">
+          <h3>{{ myads.quantity }} {{ myads.have }} to {{ myads.want }} - {{ myads.city }}
+            <br> by {{ myads.creator.username }} </h3>
+        </a>
+      </div>
+    </div> -->
 
-  <input id="star-3" type="radio" name="reviewStars" />
-  <label title="good" for="star-3"></label>
 
-  <input id="star-2" type="radio" name="reviewStars" />
-  <label title="regular" for="star-2"></label>
-
-  <input id="star-1" type="radio" name="reviewStars" />
-  <label title="poor" for="star-1"></label>
-
-  <input id="star-0" type="radio" name="reviewStars" />
-  <label title="bad" for="star-0"></label>
-</div>
-
-<div>
-  <div *ngFor="let myads of adList">
-    <a [routerLink]="['/ad',myads._id]">
-      <h3>{{ myads.quantity }} {{ myads.have }} to {{ myads.want }} - {{ myads.city }}
-        <br> by {{ myads.creator.username }} </h3>
-    </a>
+    <div class="col">
+    <h1>Tus Anuncios</h1>
+    <div class="ads-container">
+      <figure class="card snip1540" *ngFor="let myads of adList">
+        <div class="card__wrapper">
+          <a [routerLink]="['/ad',myads._id]">
+            <figcaption>
+              <h2>{{ myads.quantity }} {{ myads.have }} to {{ myads.want }}</h2>
+              <h3>{{ myads.creator.username }} - {{ myads.city }}</h3>
+              <p>{{ myads.comment }}</p>
+            </figcaption>
+          </a>
+        </div>
+      </figure>
+    </div>
+    </div>
   </div>
 </div>

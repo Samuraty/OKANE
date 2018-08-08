@@ -1,48 +1,45 @@
 <div class="box-top-board coin-pic">
     <h1> Currency Tools </h1>
+    <div class="form-wrapper">
+        <form>
+            <div class="d-inline-block box-mini-filter">
+                <label for="have">Have</label>
+                <select name="have" [(ngModel)]="haveConvert">
+                    <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+                </select>
+            </div>
+            <div class="d-inline-block box-mini-filter">
+                <label for="want">Want</label>
+                <select name="want" [(ngModel)]="wantConvert">
+                    <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+                </select>
+            </div>
+            <div class="d-inline-block box-mini-filter">
+                <label for="quantity">Quantity</label>
+                <input type="number" [(ngModel)]="quantityConvert" name="quantity" min=0 />
+            </div>
+        </form>
+        <div class="button-yellow">
+            <button class="btn create-convert" (click)="convert(quantityConvert, haveConvert, wantConvert)"> Convert</button>
+            <button class="btn create-week" (click)="getDates(haveConvert,wantConvert)"> See last week currency evolution</button>
+        </div>
+    </div>
+
 </div>
-<form>
-    <div class="d-inline-block box-mini-filter">
-        <label for="have">Have</label>
-        <select name="have" [(ngModel)]="haveConvert">
-            <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-        </select>
-        <br>
-    </div>
-    <div class="d-inline-block box-mini-filter">
-        <label for="want">Want</label>
-        <select name="want" [(ngModel)]="wantConvert">
-            <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-        </select>
-    </div>
-    <div class="d-inline-block box-mini-filter">
-        <label for="quantity">Quantity</label>
-        <input type="number" [(ngModel)]="quantityConvert" name="quantity" min=0 />
-        <br>
-    </div>
-    <br>
-</form>
+
 
 <div>
-    <button class="btn float-right create-convert" (click)="convert(quantityConvert, haveConvert, wantConvert)"> Convert</button>
-    <button class="btn float-right create-week" (click)="getDates(haveConvert,wantConvert)"> See last week currency evolution</button>
-    <br>
     <div class="if-convert" *ngIf="convertion!==undefined">
         <div>
-            <p>You would receive {{convertion}},
-            (exchange rate checked on {{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}})</p>
+            <p>You would receive {{convertion}}, (exchange rate checked on {{ today | date:'EEEE, MMMM d, y, HH:mm:ss'}})</p>
         </div>
     </div>
 </div>
 
 <div class="container-tools">
-    <div class="row">
+    <div class="row div-chart">
         <div *ngIf="ratioArray[6] !== undefined" class="chart-coin col" style="display: block">
-            <canvas baseChart 
-            [datasets]="doughnutChartData" 
-            [labels]="doughnutChartLabels" 
-            [chartType]="doughnutChartType" 
-            [options]="doughnutChartOptions">
+            <canvas baseChart [datasets]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [options]="doughnutChartOptions">
             </canvas>
         </div>
 
