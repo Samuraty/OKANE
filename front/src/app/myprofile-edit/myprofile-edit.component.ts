@@ -38,11 +38,13 @@ export class MyprofileEditComponent implements OnInit {
   ngOnInit() { }
   
 
-  edit(user) {
-    // this.userService.edit(this.user).subscribe(user => {
-    //   this.user = user;
-    //   this.router.navigate(["/profile"]);
-    // })
+  edit() {
+    if (this.uploader.queue.length === 0) {
+      this.userService.edit(this.user).subscribe(us => {
+        this.user = us;
+        this.router.navigate(['/profile']);
+      }); 
+    } else {
     this.uploader.onBuildItemForm = (item, form) => {
       form.append('username', this.user.username);
       form.append('email', this.user.email);
@@ -51,6 +53,6 @@ export class MyprofileEditComponent implements OnInit {
     this.uploader.uploadAll();
     this.uploader.onCompleteItem = () => {
       this.router.navigate(['/profile']);
-    };
+    };}
   }
 }

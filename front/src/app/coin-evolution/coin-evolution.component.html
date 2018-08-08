@@ -38,13 +38,16 @@
 
 <div class="container-tools">
     <div class="row div-chart">
-        <div *ngIf="ratioArray[6] !== undefined" class="chart-coin col" style="display: block">
+        
+        <div *ngIf="ratioArray[6] !== undefined" class="col-12 col-md-8" style="display: block">
+            <div class="chart-coin">
             <canvas baseChart [datasets]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [options]="doughnutChartOptions">
             </canvas>
+            </div>
         </div>
 
-        <div class="col" *ngIf="ratioArray[0] !== undefined">
-            Right now, for 1 {{haveConvert}} you would receive {{ratioArray[6]}} {{wantConvert}}.
+        <div class="div-table col-12 col-md-4" *ngIf="ratioArray[0] !== undefined">
+            <p>Right now, for 1 {{haveConvert}} you would receive {{ratioArray[6]}} {{wantConvert}}.</p>
             <table id="table">
                 <thead *ngIf="dateArray[0] !== undefined">
                     <tr>

@@ -25,6 +25,7 @@ export class MyprofileComponent implements OnInit {
     // } else {
     //   this.sessionService.isLogged().subscribe(user => this.user = user);
     // }
+    
     this.sessionService.isLogged().subscribe(user => {
       this.user = user;
       console.log(user)

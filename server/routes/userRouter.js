@@ -47,6 +47,16 @@ router.post("/edit", uploadCloud.single('file'), (req, res, next) => {
     .catch(e => next(e));
 });
 
+router.post("/editNoPic", (req, res, next) => {
+  const updates = _.pick(req.body, fields);
+  User.findByIdAndUpdate(req.body._id, updates, { new: true })
+    .then(user => {
+      console.log(user)
+      return res.json(user)
+    })
+    .catch(e => next(e));
+});
+
 // Delete
 router.delete("/:id", (req, res, next) => {
   User.findByIdAndRemove(req.params.id)

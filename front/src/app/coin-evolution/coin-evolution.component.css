@@ -36,9 +36,9 @@ td{
 }
 
 .chart-coin {
-  width: 60vw;
-  height: 30vh;
-  margin-top: 7vh;
+  width: 80%;
+  margin-top: 19vh;
+  margin-left: 5vw;
 }
 
 .box-top-board {
@@ -79,17 +79,16 @@ input, select {
 }
 
 .container-tools {
-  margin-top: 3vh;
   margin-bottom: 4vh;
   margin-left: 6vh;
   margin-right: 6vh;
-
+  margin-top: -10vh;
 }
 
 .if-convert {
   display: block;
   margin-top: 3vh;
-  margin-left: 2vh;
+  margin-left: 8vh;
   font-weight: bold;
   font-size: 20px;
 }
@@ -108,5 +107,9 @@ input, select {
 
 .div-chart {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.div-table {
+  margin-top: 13vh;
 }

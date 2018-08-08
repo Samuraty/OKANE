@@ -24,7 +24,7 @@ user;
   edit(user) {
     console.log(user._id)
     return this.http
-      .post(`${environment.BASEURL}/api/user/edit/${user._id}`, user)
+      .post(`${environment.BASEURL}/api/user/editNoPic`, user)
       .pipe(map(res => res.json()));
   }
 

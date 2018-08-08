@@ -18,8 +18,8 @@ export class CoinEvolutionComponent implements OnInit {
     legend: {
       display:false,
     },
-    width: 800,
-    height: 500,
+    width: 500,
+    height: 300,
   };
   
   
@@ -40,7 +40,7 @@ export class CoinEvolutionComponent implements OnInit {
 
   ngOnInit() {}
 
-  convert(amount, from, to) {
+  convert(amount, from, to) {  //conversor de 1 moneda
     this.today = Date.now();
     this.convertService.convertCurrency(from, to).subscribe(res => {
       this.resultConvert = Number(Object.values(res)[0]) * amount;
@@ -54,7 +54,7 @@ export class CoinEvolutionComponent implements OnInit {
     });
   }
 
-  getDates(fromCurrenty, toCurrency) {
+  getDates(fromCurrenty, toCurrency) { //gráfica de la moneda
     // The API needs the dates in format yyyy-mm-dd (like {{today | date: 'y-MM-dd'}}).
     // I will get values for a week starting today (lastDate) and going back 7 days (firstDate).
     var date, dd, day, mm, month, year, finalDate, firstDate, lastDate;
