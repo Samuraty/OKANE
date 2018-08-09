@@ -27,9 +27,11 @@
     </div>
     <figcaption>
       <h3>
+        <label><i class="fas fa-user"></i></label>
         <input type="text" [(ngModel)]="user.username" name="username" placeholder="username" />
       </h3>
       <h4>
+        <label><i class="far fa-envelope"></i></label>
         <input type="text" [(ngModel)]="user.email" name="email" placeholder="email" />
       </h4>
       <button class="create" (click)="edit()"> Save </button>

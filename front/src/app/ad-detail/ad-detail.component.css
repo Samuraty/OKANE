@@ -142,19 +142,6 @@ figure {
   background-position: 0% 70%;
 }
 
-/* .box-top-board {
-    padding-left: 8vw;
-    padding-top: 4vh;
-    background-color: #058392;
-    color: white;
-    height: 25vh;
-    background-image: url("../../assets/images/banner12.jpg");
-    background-size: 100% 175px ;
-    background-repeat: no-repeat;   
-    background-position: 0% 47%;
-
-  } */
-
 .box-mini-filter {
   padding-right: 4vw;
   padding-left: 1vw;
@@ -183,8 +170,12 @@ select {
 }
 
 .chat-ad {
-  padding-left: 15vw;
+  padding-left: 5vw;
   padding-top: 5vh;
+  margin-bottom: 20vh;
+  margin-top: 2vh;
+  border: 1px solid gray;
+  max-width: 30%;
 }
 
 .create {
@@ -211,3 +202,4 @@ i {
   font-size: 25px;
   margin-right: 0.5vw;
 }
+

@@ -33,7 +33,7 @@
   font-size: 14px;
   box-shadow: none !important;
   margin-left: 34vw;
-  margin-top: 5vh;
+  margin-top: 4vh;
 }
 
 .snip1515 * {
@@ -133,4 +133,13 @@ i {
 button {
   border-radius: 7px;
   background-color: rgb(240, 193, 25);
+}
+
+h1 {
+  margin-bottom: 6vh;
+}
+
+input {
+  border-radius: 5px;
+  padding: 1vh 1vw;
 }
