@@ -1,7 +1,8 @@
 <div class="box-top-board coin-pic">
     <h1> Post Details </h1>
     <div>
-        <a [routerLink]="['/ads']"><i class="far fa-arrow-alt-circle-left"></i>Back to Board</a>
+        <a [routerLink]="['/ads']">
+            <i class="far fa-arrow-alt-circle-left"></i>Back to Board</a>
     </div>
 </div>
 
@@ -38,8 +39,20 @@
         </div>
 
         <div class="chat-ad col-12 col-md-6">
-            <app-chat></app-chat>
+            <div>
+                <h3>CHAT</h3>
+            </div>
+
+            <ul>
+                <li *ngFor="let message of chatService.messages">
+                    <b>From {{message.origin}}: </b>
+                    <span>{{message.content}}</span>
+                </li>
+            </ul>
+
+            <input [(ngModel)]="chatBox">
+            <button (click)="chatService.sendMessageTo(chatBox, ad.creator._id); chatBox=''">Send</button>
+            <!-- <app-chat></app-chat> -->
         </div>
     </div>
 </div>
-

@@ -9,4 +9,4 @@
 </ul>
 
 <input [(ngModel)]="chatBox">
-<button (click)="chatService.sendMessage(chatBox); chatBox=''">Send</button>
+<button (click)="chatService.sendMessageTo(chatBox, creator._id); chatBox=''">Send</button>

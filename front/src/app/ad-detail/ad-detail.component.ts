@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "../../../node_modules/@angular/router";
 import { AdService } from "../../services/ad.service";
 import { SessionService } from "../../services/session";
 import { ConvertService } from "../../services/convert.service";
+import { ChatService } from "../../services/chat.service";
 
 @Component({
   selector: "app-ad-detail",
@@ -34,7 +35,8 @@ export class AdDetailComponent implements OnInit {
     private adService: AdService,
     private router: Router,
     private sessionService: SessionService,
-    private convertService: ConvertService
+    private convertService: ConvertService,
+    public chatService: ChatService
   ) {
     this.route.params.subscribe(params => {
       this.adService.get(params.id).subscribe(ad => {

@@ -10,7 +10,8 @@ import { of } from 'rxjs';
 const {BASEURL} = environment;
 
 interface UserObject{
-  username: String,
+  _id: String,
+  username: string,
   email: String,
   password: String,
   image: {type: String, default: "images/profilepic.png" },

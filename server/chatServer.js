@@ -13,6 +13,12 @@ const chatServer = (io) => {
           console.log("Ho!");
           socket.broadcast.emit('chatMessage',data);
       });
+      socket.on('messageTo', data => {
+        console.log(data)
+        console.log("Ho!");
+        socket.broadcast.emit(data.id,data);
+        socket.emit(data.myId, data);
+    });
 
   });
 
