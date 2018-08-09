@@ -139,7 +139,7 @@ figure {
   height: 25vh;
   background-image: url("../../assets/images/banner12.jpg");
   background-size: cover;
-  background-position: 0% 70%;
+  background-position: 0% 58%;
 }
 
 .box-mini-filter {
@@ -172,7 +172,7 @@ select {
 .chat-ad {
   padding-left: 5vw;
   padding-top: 5vh;
-  margin-bottom: 20vh;
+  margin-bottom: 6vh;
   margin-top: 2vh;
   border: 1px solid gray;
   max-width: 30%;
