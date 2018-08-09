@@ -40,7 +40,7 @@ export class AdEditComponent implements OnInit {
   edit(ad) {
     this.adService.edit(this.ad).subscribe(ad => {
       this.ad = ad;
-      this.router.navigate(["/ads"]);
+      this.router.navigate(['/ad',ad._id]);
     })
   }
 }

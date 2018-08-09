@@ -2,7 +2,7 @@
   height: 30vh;
   background-image: url("../../assets/images/banner12.jpg");
   background-size: cover;
-  background-position: 0% 65%;
+  background-position: 0% 58%;
 }
 
 .container {
@@ -11,7 +11,7 @@
   border: 2px solid darkturquoise;
   margin: 50px auto;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 #title { 

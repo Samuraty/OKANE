@@ -1,8 +1,12 @@
 <div class="box-top-board coin-pic">
     <h1> Edit Your Ad </h1>
+    <div>
+        <a [routerLink]="['/profile']">
+        <i class="far fa-arrow-alt-circle-left"></i>Back to Board</a>
+    </div>
 </div>
 
-<div *ngIf="ad">
+<!-- <div *ngIf="ad">
     <label>City</label>
     <input type="text" [ngModel]="ad.city | capitalizeFirst" (ngModelChange)="ad.city=$event" name="city" />
     <br>
@@ -29,4 +33,56 @@
         <button (click)="edit(ad._id)"> Save </button>
     </div>
     <a [routerLink]="['/ads']">Back to board</a>
+</div> -->
+
+
+
+<div *ngIf="ad">
+
+    <div class="container">
+        <h1 id="title">Edit what you want and save the changes!</h1>
+
+        <form id="survey-form" action="" method="post" autocomplete="on">
+
+            <div>
+                <label id="label" for="city">* City where you want to meet: </label>
+                <input class="input-field" type="text" [ngModel]="ad.city | capitalizeFirst" (ngModelChange)="ad.city=$event" name="city"
+                />
+            </div>
+            <div>
+                <label id="label" for="have">* Currency you want to get rid of: </label>
+                <select class="dropdownHave" name="have" [(ngModel)]="ad.have">
+                    <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+                </select>
+                <div>
+                </div>
+                <label id="label" for="quantity">* Quantity you have available: </label>
+                <input type="number" class="number-field" [(ngModel)]="ad.quantity" name="quantity" min=0 />
+                <div>
+                </div>
+                <label id="label" for="want">* Currency you want to obtain: </label>
+                <select class="dropdownWant" name="want" [(ngModel)]="ad.want">
+                    <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+                </select>
+            </div>
+            <div>
+                <label id="label-2" for="comment">Additional comments (if any): </label>
+                <textarea class="input-field" name="comment" id="comments" [(ngModel)]="ad.comment" cols="40" rows="2" maxlength={{maxLength}}></textarea>
+                <div id="characters">
+                    <span id="label">(characters left: {{maxLength - ad.comment.length}})</span>
+                </div>
+            </div>
+            <div class="buttons">
+                <div>
+                    <a [routerLink]="['/ad',ad._id]">
+                        <button button id="cancel"> Cancel </button>
+                    </a>
+                </div>
+                <div *ngIf="canEdit">
+                    <button id="create" (click)="edit(ad._id)"> Save </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
 </div>
