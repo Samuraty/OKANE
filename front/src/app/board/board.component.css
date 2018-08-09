@@ -177,7 +177,7 @@ input, select {
 }
 
 .coin-pic {
-  height: 30vh;
+  height: 25vh;
   background-image: url("../../assets/images/currency-banner.jpg");
   background-size: cover;
   background-position: 100%;

@@ -5,3 +5,10 @@
   color: white;
   height: 20vh;
 }
+
+.coin-pic {
+  height: 25vh;
+  background-image: url("../../assets/images/people-ConvertImage.jpg");
+  background-size: cover;
+  background-position: 0% 65%;
+}

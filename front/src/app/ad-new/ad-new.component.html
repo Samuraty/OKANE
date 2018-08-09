@@ -34,16 +34,14 @@
 <div class="container">
     <h1 id="title">Send us your feedback!</h1>
     <br />
-
-
     <form id="survey-form" action="" method="post" autocomplete="on">
 
-        <label id="name-label" for="Name">* Name</label>
-        <input autofocus type="text" id="name" class="input-field" placeholder="Enter your Name" name="name" required>
+        <label id="name-label" for="city">* City</label>
+        <input autofocus type="text" id="city" class="input-field" placeholder="City" name="city" [ngModel]="ad.city | capitalizeFirst" (ngModelChange)="ad.city=$event" name="city"required>
         <br />
         <br />
-        <label id="email-label" for="email">* Email </label>
-        <input type="email" name="email" id="email" class="input-field" required placeholder="Enter your Email">
+        <label id="quantity" for="quantity">* Quantity </label>
+        <input type="number" name="quantity" id="quantity" class="input-field" required placeholder="Quantity">
         <br />
         <br />
 

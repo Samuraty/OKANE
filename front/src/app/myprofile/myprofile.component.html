@@ -4,7 +4,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-12 col-md-4">
+    <!-- <div class="col-12 col-md-4">
       <h3>
         <label for="name">Name: {{user.username}}</label>
       </h3>
@@ -17,8 +17,32 @@
       <img [src]="user.image" width=300/>
       <br>
       <button [routerLink]="['/edit',user._id]">Edit profile</button>
-    </div>
+    </div> -->
 
+
+    <figure class="snip1515">
+        <div class=" profile-image">
+            <img [src]="user.image" width=300/>
+        </div>
+        <figcaption>
+          <h3> <label for="name">{{user.username}}</label></h3>
+          <h4><label for="email">{{user.email}}</label></h4>
+          <p><label for="since">Member since: {{user.created_at | date: "dd MMMM y"}}</label></p>
+
+          <div class="icons">
+            <a [routerLink]="['/profile']">
+              <i class="ion-social-reddit"></i>
+            </a>
+            <a [routerLink]="['/profile']">
+              <i class="ion-social-twitter"></i>
+            </a>
+            <a [routerLink]="['/profile']">
+              <i class="ion-social-vimeo"></i>
+            </a>
+          </div>
+          <button class="create" [routerLink]="['/edit',user._id]">Edit profile</button>
+        </figcaption>
+      </figure>
 
 
     <!-- <div id="reviewStars-input">
@@ -49,7 +73,7 @@
     </div> -->
 
 
-    <div class="contain-ad col-12 col-md-8">
+    <div class="contain-ad col-12 col-md-6">
       <h1>My Posts</h1>
       <div class="ads-container">
         <figure class="card snip1540" *ngFor="let myads of adList">
@@ -67,3 +91,5 @@
     </div>
   </div>
 </div>
+
+

@@ -309,3 +309,40 @@ h1 {
 	}
 
 }
+
+
+.landing-box {
+  height: 22vh;
+  background-color: #368090;
+  padding: 5vh;
+}
+
+.icon-box {
+  height: 22vh;
+}
+
+.icon-box-left {
+
+}
+
+.section2 {
+  background-color: white;
+}
+
+.box-text {
+  margin: 6vh 12vw;
+}
+
+.icon-box-left i {
+  margin-left: 12vw;
+  font-size: 10em;
+}
+
+.icon-box i {
+  margin-left: 12vw;
+  font-size: 10em;
+}
+
+.landing-box p {
+  font-size: 1.5em;
+}
