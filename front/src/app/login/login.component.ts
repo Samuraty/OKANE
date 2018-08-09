@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
   username;
   password;
   error;
+  message: String = "";
   constructor(private sessionService:SessionService, private router:Router) { }
 
   ngOnInit() {
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
     console.log("login....");
     this.sessionService.login(username,password).subscribe( user => {
       console.log(user);
-      this.router.navigate(['/profile']);
+      if (user.status != 500) this.router.navigate(['/profile']);
+      else this.message = "User doesn't exist"
     });
   }
 

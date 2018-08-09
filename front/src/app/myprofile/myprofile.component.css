@@ -251,3 +251,13 @@ button {
   margin-top: 0vh;
   text-align: center;
 }
+
+i {
+  margin-right: 1vw;
+}
+
+img {
+  max-width: 300px;
+  max-height: 220px;
+}
+

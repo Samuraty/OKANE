@@ -37,6 +37,7 @@
         Please, enter your password.
       </p>
     </div>
+    <p *ngIf="message" class="error"> {{ message }} </p>
     <p class="error"> {{ error }} </p>
   </div>
 </div>

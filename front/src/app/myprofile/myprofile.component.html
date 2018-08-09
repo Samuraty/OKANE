@@ -4,77 +4,40 @@
 
 <div class="container">
   <div class="row">
-    <!-- <div class="col-12 col-md-4">
-      <h3>
-        <label for="name">Name: {{user.username}}</label>
-      </h3>
-      <h3>
-        <label for="email">Email: {{user.email}}</label>
-      </h3>
-      <h3>
-        <label for="since">Member since: {{user.created_at | date: "dd MMMM y"}}</label>
-      </h3>
-      <img [src]="user.image" width=300/>
-      <br>
-      <button [routerLink]="['/edit',user._id]">Edit profile</button>
-    </div> -->
-
-
     <figure class="snip1515">
-        <div class=" profile-image">
-            <img [src]="user.image" width=300/>
-        </div>
-        <figcaption>
-          <h3> <label for="name">{{user.username}}</label></h3>
-          <h4><label for="email">{{user.email}}</label></h4>
-          <p><label for="since">Member since: {{user.created_at | date: "dd MMMM y"}}</label></p>
-
-          <div class="icons">
-            <a [routerLink]="['/profile']">
-              <i class="ion-social-reddit"></i>
-            </a>
-            <a [routerLink]="['/profile']">
-              <i class="ion-social-twitter"></i>
-            </a>
-            <a [routerLink]="['/profile']">
-              <i class="ion-social-vimeo"></i>
-            </a>
-          </div>
-          <button class="create" [routerLink]="['/edit',user._id]">Edit profile</button>
-        </figcaption>
-      </figure>
-
-
-    <!-- <div id="reviewStars-input">
-    <input id="star-4" type="radio" name="reviewStars" />
-    <label title="gorgeous" for="star-4"></label>
-
-    <input id="star-3" type="radio" name="reviewStars" />
-    <label title="good" for="star-3"></label>
-
-    <input id="star-2" type="radio" name="reviewStars" />
-    <label title="regular" for="star-2"></label>
-
-    <input id="star-1" type="radio" name="reviewStars" />
-    <label title="poor" for="star-1"></label>
-
-    <input id="star-0" type="radio" name="reviewStars" />
-    <label title="bad" for="star-0"></label>
-    </div> -->
-
-
-    <!-- <div>
-      <div *ngFor="let myads of adList">
-        <a [routerLink]="['/ad',myads._id]">
-          <h3>{{ myads.quantity }} {{ myads.have }} to {{ myads.want }} - {{ myads.city }}
-            <br> by {{ myads.creator.username }} </h3>
-        </a>
+      <div class=" profile-image">
+        <img [src]="user.image" width=300/>
       </div>
-    </div> -->
+      <figcaption>
+        <h3>
+          <label for="name">{{user.username}}</label>
+        </h3>
+        <h4>
+          <label for="email">{{user.email}}</label>
+        </h4>
+        <p>
+          <label for="since">Member since: {{user.created_at | date: "dd MMMM y"}}</label>
+        </p>
+
+        <div class="icons">
+          <a [routerLink]="['/profile']">
+            <i class="ion-social-reddit"></i>
+          </a>
+          <a [routerLink]="['/profile']">
+            <i class="ion-social-twitter"></i>
+          </a>
+          <a [routerLink]="['/profile']">
+            <i class="ion-social-vimeo"></i>
+          </a>
+        </div>
+        <button class="create" [routerLink]="['/edit',user._id]">Edit profile</button>
+      </figcaption>
+    </figure>
 
 
     <div class="contain-ad col-12 col-md-6">
-      <h1>My Posts</h1>
+      <h1>
+        <i class="far fa-clipboard"></i>My Posts</h1>
       <div class="ads-container">
         <figure class="card snip1540" *ngFor="let myads of adList">
           <div class="card__wrapper">
@@ -92,4 +55,29 @@
   </div>
 </div>
 
+<!-- <div id="reviewStars-input">
+    <input id="star-4" type="radio" name="reviewStars" />
+    <label title="gorgeous" for="star-4"></label>
 
+    <input id="star-3" type="radio" name="reviewStars" />
+    <label title="good" for="star-3"></label>
+
+    <input id="star-2" type="radio" name="reviewStars" />
+    <label title="regular" for="star-2"></label>
+
+    <input id="star-1" type="radio" name="reviewStars" />
+    <label title="poor" for="star-1"></label>
+
+    <input id="star-0" type="radio" name="reviewStars" />
+    <label title="bad" for="star-0"></label>
+    </div> -->
+
+
+<!-- <div>
+      <div *ngFor="let myads of adList">
+        <a [routerLink]="['/ad',myads._id]">
+          <h3>{{ myads.quantity }} {{ myads.have }} to {{ myads.want }} - {{ myads.city }}
+            <br> by {{ myads.creator.username }} </h3>
+        </a>
+      </div>
+    </div> -->

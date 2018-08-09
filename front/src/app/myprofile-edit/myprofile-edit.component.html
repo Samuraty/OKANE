@@ -1,8 +1,12 @@
 <div class="box-top-board coin-pic">
   <h1> Edit Your Profile </h1>
+  <div>
+    <a [routerLink]="['/profile']">
+      <i class="far fa-arrow-alt-circle-left"></i>Back to Profile</a>
+  </div>
 </div>
 
-<div *ngIf="user">
+<!-- <div *ngIf="user">
   <label>Name</label>
   <input type="text" [(ngModel)]="user.username" name="username" />
   <br>
@@ -13,6 +17,22 @@
   <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
   <br>
   <button (click)="edit()"> Save </button>
-</div>
+</div> -->
 
-<a [routerLink]="['/profile']">Back to profile</a>
+<div>
+  <figure class="snip1515">
+    <div class=" profile-image">
+      <img [src]="user.image" width=300/>
+      <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
+    </div>
+    <figcaption>
+      <h3>
+        <input type="text" [(ngModel)]="user.username" name="username" placeholder="username" />
+      </h3>
+      <h4>
+        <input type="text" [(ngModel)]="user.email" name="email" placeholder="email" />
+      </h4>
+      <button class="create" (click)="edit()"> Save </button>
+    </figcaption>
+  </figure>
+</div>
