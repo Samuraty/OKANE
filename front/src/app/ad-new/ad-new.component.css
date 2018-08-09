@@ -1,8 +1,8 @@
 .coin-pic {
-  height: 30vh;
-  background-image: url("../../assets/images/banner12.jpg");
+  height: 25vh;
+  background-image: url("../../assets/images/currency-banner.jpg");
   background-size: cover;
-  background-position: 0% 58%;
+  background-position: 100%;
 }
 
 .container {
