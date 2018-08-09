@@ -170,12 +170,12 @@ select {
 }
 
 .chat-ad {
-  padding-left: 5vw;
   padding-top: 5vh;
-  margin-bottom: 6vh;
+  margin-bottom: 3vh;
   margin-top: 2vh;
   border: 1px solid gray;
   max-width: 30%;
+  background-color: #EDEDEE;
 }
 
 .create {
@@ -203,3 +203,16 @@ i {
   margin-right: 0.5vw;
 }
 
+ul {
+  margin-top: 2vh;
+  margin-bottom: 1rem;
+  margin-left: 1vw;
+}
+
+.chat-with {
+  text-align: center;
+}
+
+.chat-ad input {
+  margin-left: 3vw;
+}

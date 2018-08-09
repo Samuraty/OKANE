@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     console.log("login....");
     this.sessionService.login(username,password).subscribe( user => {
       console.log(user);
-      if (user['status'] != 500) this.router.navigate(['/profile']);
+      if (user['status'] != 500) this.router.navigate(['/ads']);
       else {
         this.message = "User doesn't exist";
         this.username = "";
