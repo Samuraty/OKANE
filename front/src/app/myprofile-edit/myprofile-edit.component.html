@@ -28,7 +28,7 @@
     <figcaption>
       <h3>
         <label><i class="fas fa-user"></i></label>
-        <input type="text" [(ngModel)]="user.username" name="username" placeholder="username" />
+        <input type="text" [ngModel]="user.username | capitalizeFirst" (ngModelChange)="user.username=$event" name="username" placeholder="username" />
       </h3>
       <h4>
         <label><i class="far fa-envelope"></i></label>

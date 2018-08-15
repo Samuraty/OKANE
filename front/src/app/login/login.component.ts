@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
       console.log(user);
       if (user['status'] != 500) this.router.navigate(['/ads']);
       else {
-        this.message = "User doesn't exist";
+        this.message = "Incorrect username and/or password.";
         this.username = "";
         this.password = "";
       }

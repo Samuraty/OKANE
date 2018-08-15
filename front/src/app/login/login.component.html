@@ -27,17 +27,23 @@
     <p>Don't have an account?
     <a [routerLink]="['/signup']"> Sign Up </a>
 
-    <div *ngIf="myUsr.errors && (myUsr.dirty || myUsr.touched)">
-      <p class="error" [hidden]="!myUsr.errors.required">
-        Please, enter your usermail.
-      </p>
-    </div>
-    <div *ngIf="myPass.errors && (myPass.dirty || myPass.touched)">
-      <p class="error" [hidden]="!myPass.errors.required">
-        Please, enter your password.
-      </p>
-    </div>
+
     <p *ngIf="message" class="error"> {{ message }} </p>
-    <p class="error"> {{ error }} </p>
+    <div *ngIf="myUsr.errors && (myUsr.dirty || myUsr.touched) && (myPass.valid || myPass.untouched)">
+      <p class="error" [hidden]="!myUsr.errors.required">
+        Please, enter a valid username.
+      </p>
+    </div>
+    <div *ngIf="myPass.errors && (myPass.dirty || myPass.touched) && (myUsr.valid || myUsr.untouched)">
+      <p class="error" [hidden]="!myPass.errors.required">
+        Please, enter a valid password.
+      </p>
+    </div>
+    <div *ngIf="myPass.errors && (myPass.dirty || myPass.touched) && myUsr.errors && (myUsr.dirty || myUsr.touched)">
+      <p class="error" [hidden]="!myPass.errors.required">
+        Please, enter a valid username and password.
+      </p>
+    </div>
+    
   </div>
 </div>
