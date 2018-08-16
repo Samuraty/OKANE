@@ -55,4 +55,5 @@ export class MyprofileEditComponent implements OnInit {
       this.router.navigate(['/profile']);
     };}
   }
+
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { SessionService } from "../../services/session";
 import { Router } from "../../../node_modules/@angular/router";
-import 'jquery';
+import "jquery";
 //import * as $ from 'jquery';
 
 @Component({
@@ -16,20 +16,6 @@ export class SignupComponent implements OnInit {
   constructor(private sessionService: SessionService, private router: Router) {}
 
   ngOnInit() {
-    // (function() {
-    //   var inputs = document.querySelectorAll(".form .input-group input");
-    //   var button = document.getElementById("login");
-    //   console.log(inputs)
-    //   inputs.forEach(input => {
-    //     input.addEventListener("focusout", e => {
-    //       if (e.target.value === "") {
-    //         return e.target.classList.remove("has-value");
-    //       }
-
-    //       return e.target.classList.add("has-value");
-    //     });
-    //   });
-    // })();
   }
 
   signup(username: string, email: string, password: string) {
@@ -41,5 +27,18 @@ export class SignupComponent implements OnInit {
         console.log(user);
         this.router.navigate(["/profile"]);
       });
+  }
+
+  canDeactivate() {
+    console.log("I am navigating away");
+    // if the editName !== this.user.name
+    if (
+      this.username.length !== 0 ||
+      this.email.length !== 0 ||
+      this.password.length !== 0
+    ) {
+      return window.confirm("Are you sure you want to discard your changes?");
+    }
+    return true;
   }
 }

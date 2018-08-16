@@ -25,6 +25,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { ChatComponent } from './chat/chat.component';
 import { ChatService } from '../services/chat.service';
 import { ChartsModule } from 'ng2-charts';
+import { CanDeactivateGuard } from '../services/can-deactivate.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { ChartsModule } from 'ng2-charts';
     FileUploadModule,
     ChartsModule
   ],
-  providers: [SessionService, AdService, UserService, ChatService],
+  providers: [SessionService, AdService, UserService, ChatService, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
