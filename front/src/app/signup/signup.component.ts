@@ -13,12 +13,15 @@ export class SignupComponent implements OnInit {
   username;
   email;
   password;
+  submit = false;
+
   constructor(private sessionService: SessionService, private router: Router) {}
 
   ngOnInit() {
   }
 
   signup(username: string, email: string, password: string) {
+    this.submit = true;
     console.log("signup....");
     this.sessionService
       .signup(username, email, password)
@@ -33,9 +36,10 @@ export class SignupComponent implements OnInit {
     console.log("I am navigating away");
     // if the editName !== this.user.name
     if (
-      this.username.length !== 0 ||
-      this.email.length !== 0 ||
-      this.password.length !== 0
+      this.submit === false && 
+      (this.username !== undefined ||
+      this.email !== undefined ||
+      this.password !== undefined)
     ) {
       return window.confirm("Are you sure you want to discard your changes?");
     }

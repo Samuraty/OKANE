@@ -19,7 +19,8 @@ export const routes: Routes = [
   { path:'ads', component:BoardComponent},
   { path:'ad/:id', component: AdDetailComponent },
   { path:'ads/new', component: AdNewComponent, canDeactivate:[CanDeactivateGuard]},
-  { path:'ad/edit/:id', component: AdEditComponent},
+  { path:'ad/edit/:id', component: AdEditComponent, canDeactivate:[CanDeactivateGuard]},
   { path:'evolution', component:CoinEvolutionComponent},
-  { path:'', component: LandingComponent}
+  { path:'', component: LandingComponent},
+  { path:'**', redirectTo:''}
 ];

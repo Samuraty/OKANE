@@ -18,6 +18,8 @@ export class AdNewComponent implements OnInit {
     comment: ""
   };
 
+  submit = false;
+
   currencies = [
     "EUR",
     "USD",
@@ -43,6 +45,7 @@ export class AdNewComponent implements OnInit {
   ngOnInit() {}
 
   newAd() {
+    this.submit = true;
     console.log(this.ad);
     this.adService.newAd(this.ad).subscribe(() => {
       this.router.navigate(["/ads"]);
@@ -53,11 +56,12 @@ export class AdNewComponent implements OnInit {
     console.log("I am navigating away");
     // if the editName !== this.user.name
     if (
-      this.ad.city.length !== 0 ||
+      this.submit === false && 
+      (this.ad.city.length !== 0 ||
       this.ad.quantity.length !== 0 ||
       this.ad.have.length !== 0 ||
       this.ad.want.length !== 0 ||
-      this.ad.comment.length !== 0
+      this.ad.comment.length !== 0)
     ) {
       return window.confirm("Are you sure you want to discard your changes?");
     }

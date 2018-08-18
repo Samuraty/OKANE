@@ -13,6 +13,13 @@ export class AdEditComponent implements OnInit {
   ad;
   user;
   canEdit: boolean = false;
+  
+  oldCity: string;
+  oldQuantity: string;
+  oldHave: string;
+  oldWant: string;
+  oldComment: string;
+  submit = false;
 
   currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"];
   maxLength = 40;  //máximo caracteres para comentarios.
@@ -35,12 +42,35 @@ export class AdEditComponent implements OnInit {
     });
    }
 
-  ngOnInit() {}
+  ngOnInit() {
+    setTimeout(() => {
+      this.setInitial()
+    }, 250);
+  }
+
+  setInitial() {
+    this.oldCity = this.ad.city;
+    this.oldQuantity = this.ad.quantity;
+    this.oldHave = this.ad.have;
+    this.oldWant = this.ad.want;
+    this.oldComment = this.ad.comment;
+  }
 
   edit(ad) {
+    this.submit = true;
     this.adService.edit(this.ad).subscribe(ad => {
       this.ad = ad;
       this.router.navigate(['/ad',ad._id]);
     })
   }
+
+  canDeactivate() {
+    console.log('I am navigating away');
+    if (this.submit === false && (this.oldCity !== this.ad.city || this.oldHave !== this.ad.have ||
+    this.oldWant !== this.ad.want || this.oldQuantity !== this.ad.quantity || 
+    this.oldComment !== this.ad.comment)) {
+    return window.confirm("Are you sure you want to discard your changes?");
+    }
+    return true;
+    }
 }

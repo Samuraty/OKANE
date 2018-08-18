@@ -14,6 +14,12 @@ import { environment } from "../../environments/environment";
 })
 export class MyprofileEditComponent implements OnInit {
   user;
+
+  oldUser: string;
+  oldEmail: string;
+  oldImage: any;
+  submit = false;
+
   
   uploader: FileUploader = new FileUploader({
     url: `${environment.BASEURL}/api/user/edit`,
@@ -36,9 +42,15 @@ export class MyprofileEditComponent implements OnInit {
   }
 
   ngOnInit() { }
+  ngAfterViewInit() {
+    this.oldUser = this.user.username;
+    this.oldEmail = this.user.email;
+    this.oldImage = this.user.image;
+  }
   
 
   edit() {
+    this.submit = true;
     if (this.uploader.queue.length === 0) {
       this.userService.edit(this.user).subscribe(us => {
         this.user = us;
@@ -54,6 +66,13 @@ export class MyprofileEditComponent implements OnInit {
     this.uploader.onCompleteItem = () => {
       this.router.navigate(['/profile']);
     };}
+  }
+
+  canDeactivate() {
+    if (this.submit === false && (this.oldUser !== this.user.username || this.oldEmail !== this.user.email || this.oldImage !== this.user.image)) {
+      return window.confirm("Are you sure you want to discard your changes?");
+    }
+    return true;
   }
 
 }
