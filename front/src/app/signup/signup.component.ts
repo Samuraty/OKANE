@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   email;
   password;
   submit = false;
+  errorMessage = "";
 
   constructor(private sessionService: SessionService, private router: Router) {}
 
@@ -21,15 +22,19 @@ export class SignupComponent implements OnInit {
   }
 
   signup(username: string, email: string, password: string) {
-    this.submit = true;
-    console.log("signup....");
-    this.sessionService
-      .signup(username, email, password)
-      .subscribe((user: any) => {
-        console.log(`WELCOME USER ${user.username}, register OK`);
-        console.log(user);
-        this.router.navigate(["/profile"]);
-      });
+    if(username!== undefined && email!== undefined && password!== undefined) {
+      this.submit = true;
+      console.log("signup....");
+      this.sessionService
+        .signup(username, email, password)
+        .subscribe((user: any) => {
+          console.log(`WELCOME USER ${user.username}, register OK`);
+          console.log(user);
+          this.router.navigate(["/profile"]);
+        });
+    } else {
+      this.errorMessage = "Please, complete all fields."
+    }
   }
 
   canDeactivate() {
