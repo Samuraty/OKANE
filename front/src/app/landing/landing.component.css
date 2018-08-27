@@ -41,6 +41,11 @@ body {
   transition: all 0.2s ease-in-out;
   z-index: -2;
 }
+@media (max-width: 880px) {
+  .header:before {
+    background-position: 70%;
+  }
+}
 
 .sides,
 .info {
@@ -70,51 +75,6 @@ body {
 .content h1 {
   font-family: 'Gloria Hallelujah', cursive;
   font-weight: normal;
-}
-
-.btn {
-  color: #333;
-  border: 2px solid;
-  border-radius: 3px;
-  text-decoration: none;
-  display: inline-block;
-  padding: 5px 10px;
-  font-weight: 600;
-}
-
-.twtr {
-  margin-top: 100px;
-}
-.btn.twtr:after {
-  content: "\1F426";
-  padding-left: 5px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111111;
 }
 
 section {
@@ -314,18 +274,26 @@ h1 {
 
 
 .landing-box {
-  height: 22vh;
   background-color: #368090;
   padding: 4vh;
   border-radius: 2vh;
   border-style: solid;
   border-width: 0.5vh;
   border-color: #f9cf00;
+}
 
+.landing-box p {
+  font-size: 1.5em;
+  margin-top: 0.3vh;
 }
 
 .icon-box {
-  height: 22vh;
+  height: 9em;
+  text-align: center;
+}
+
+.icon-box i {
+  font-size: 8em;
 }
 
 .section2 {
@@ -333,22 +301,7 @@ h1 {
 }
 
 .box-text {
-  margin: 6vh 12vw;
-}
-
-.icon-box-left i {
-  margin-left: 7vw;
-  font-size: 10em;
-}
-
-.icon-box i {
-  margin-left: 6vw;
-  font-size: 10em;
-}
-
-.landing-box p {
-  font-size: 1.5em;
-  margin-top: 0.3vh;
+  margin: 2vh 12vw;
 }
 
 .mainFirst {
@@ -361,18 +314,17 @@ h1 {
 }
 
 .mainLast {
-  font-size: 1em;
   margin-top: 2.5vw;
   background-color: #f9cf00;
   padding: 2vh 2vw;
   border-radius: 2vh;
-  width: 50%;
-  margin-left: 44vh;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img {
-  width: 12vw;
-  margin-left: 5vw;
+  width: 11em;
 }
 
 .impact {
@@ -381,6 +333,9 @@ img {
 }
 
 .message {
-  margin-top: -0.5vh;
-  text-align:justify
+  text-align: justify;
+}
+
+.spacing {
+  margin-bottom: 1.5em;
 }

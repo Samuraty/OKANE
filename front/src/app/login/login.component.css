@@ -27,3 +27,7 @@ i {
   color: red;
   font-weight: bold;
 }
+
+.input {
+  width: 70%;
+}
