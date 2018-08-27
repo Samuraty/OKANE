@@ -31,3 +31,9 @@ i {
 .input {
   width: 70%;
 }
+
+@media (max-width: 880px) {
+  .field {
+    margin-left: -5vh;
+  }
+}

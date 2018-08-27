@@ -32,3 +32,9 @@ i {
   margin-top: 15px;
   font-weight: bold;
 }
+
+@media (max-width: 880px) {
+  .field {
+    margin-left: -5vh;
+  }
+}
