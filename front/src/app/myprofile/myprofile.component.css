@@ -109,7 +109,6 @@ body {
 .ads-container {
   width: 100%;
   text-align: center;
-  padding-left: 12vw;
 }
 
 .card__wrapper {
@@ -133,7 +132,6 @@ h3 {
 
 .contain-ad h1 {
   text-align: center;
-  padding-left: 12vw;
 }
 
 .row {
@@ -258,3 +256,6 @@ img {
   max-height: 220px;
 }
 
+.row {
+  justify-content:center;
+}

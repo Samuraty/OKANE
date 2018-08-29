@@ -4,36 +4,37 @@
 
 <div class="container">
   <div class="row">
-    <figure class="snip1515">
-      <div class=" profile-image">
-        <img [src]="user.image" width=300/>
-      </div>
-      <figcaption>
-        <h3>
-          <label for="name">{{user.username}}</label>
-        </h3>
-        <h4>
-          <label for="email">{{user.email}}</label>
-        </h4>
-        <p>
-          <label for="since">Member since: {{user.created_at | date: "dd MMMM y"}}</label>
-        </p>
-
-        <div class="icons">
-          <a [routerLink]="['/profile']">
-            <i class="ion-social-reddit"></i>
-          </a>
-          <a [routerLink]="['/profile']">
-            <i class="ion-social-twitter"></i>
-          </a>
-          <a [routerLink]="['/profile']">
-            <i class="ion-social-vimeo"></i>
-          </a>
+    <div class="col-12 col-md-6">
+      <figure class="snip1515">
+        <div class=" profile-image">
+          <img [src]="user.image" width=300/>
         </div>
-        <button class="create" [routerLink]="['/edit',user._id]">Edit profile</button>
-      </figcaption>
-    </figure>
+        <figcaption>
+          <h3>
+            <label for="name">{{user.username}}</label>
+          </h3>
+          <h4>
+            <label for="email">{{user.email}}</label>
+          </h4>
+          <p>
+            <label for="since">Member since: {{user.created_at | date: "dd MMMM y"}}</label>
+          </p>
 
+          <div class="icons">
+            <a [routerLink]="['/profile']">
+              <i class="ion-social-reddit"></i>
+            </a>
+            <a [routerLink]="['/profile']">
+              <i class="ion-social-twitter"></i>
+            </a>
+            <a [routerLink]="['/profile']">
+              <i class="ion-social-vimeo"></i>
+            </a>
+          </div>
+          <button class="create" [routerLink]="['/edit',user._id]">Edit profile</button>
+        </figcaption>
+      </figure>
+    </div>
 
     <div class="contain-ad col-12 col-md-6">
       <h1>
