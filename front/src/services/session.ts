@@ -5,6 +5,7 @@ import { environment } from '../environments/environment';
 import {map, catchError} from 'rxjs/operators';
 import { Observable } from "../../node_modules/rxjs";
 import { of } from 'rxjs';
+import { Router } from "@angular/router";
 
 
 const {BASEURL} = environment;
@@ -26,7 +27,7 @@ export class SessionService {
 
   options:object = {withCredentials:true};
 
-  constructor(private http:Http) {
+  constructor(private http:Http, private router: Router) {
     this.isLogged().subscribe();
   }
 
@@ -37,7 +38,11 @@ export class SessionService {
         console.log(`Automatically login ${this.user.username}`);
         return this.user;
       }),
-      catchError(e => {console.log("You have to login first!"); return of(e)})
+      catchError(e => {
+        console.log("You have to login first!"); 
+        this.router.navigate(['/login']);
+        return of(e)
+      })
     );
   }
 

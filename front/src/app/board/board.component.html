@@ -1,30 +1,32 @@
 <div class="box-top-board coin-pic">
-    <h1>Find what you're looking for!</h1>
-    <a [routerLink]="['/ads/new']">
-        <button type="button" class="btn float-right create">POST YOUR AD</button>
-    </a>
-    <br>
-    <div>
-        <div class="d-inline-block box-mini-filter">
-            <label for="city">City: </label>
-            <input type="text" placeholder="Search by City" [ngModel]="searchCity | capitalizeFirst" (ngModelChange)="searchCity=$event">
-            <br>
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <h1>Find what you're looking for!</h1>
+        <div class="row">
+          <div class="d-inline-block box-mini-filter col-md-2.5">
+              <label for="city">City: </label>
+              <input type="text" placeholder="Search by City" [ngModel]="searchCity | capitalizeFirst" (ngModelChange)="searchCity=$event">
+          </div>
+          <div class="d-inline-block box-mini-filter col-md-2.5">
+              <label for="have">Currency you have: </label>
+              <select name="have" [(ngModel)]="searchWant">
+              <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+              </select>
+          </div>
+          <div class="d-inline-block box-mini-filter col-md-2.5">
+              <label for="want">Currency you want: </label>
+              <select name="want" [(ngModel)]="searchHave">
+              <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+              </select>
+              </div>
+          </div>
         </div>
-        <div class="d-inline-block box-mini-filter">
-            <label for="have">Currency you have: </label>
-            <select name="have" [(ngModel)]="searchWant">
-                <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-            </select>
-            <br>
-        </div>
-        <div class="d-inline-block box-mini-filter">
-            <label for="want">Currency you want: </label>
-            <select name="want" [(ngModel)]="searchHave">
-                <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-            </select>
-            <br>
-        </div>
+    <div class="col-12 col-md-4">
+        <a [routerLink]="['/ads/new']">
+            <button type="button" class="btn create">POST YOUR AD</button>
+        </a>
     </div>
+  </div>
 </div>
 
 
@@ -35,11 +37,11 @@
                 <img [src]="ad.creator.image" alt="profile-sample1" />
             </div>
             <a [routerLink]="['/ad',ad._id]">
-            <figcaption>
-                <h2>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }}</h2>
-                <h3>{{ ad.creator.username }} - {{ ad.city }}</h3>
-                <p>{{ ad.comment }}</p>
-            </figcaption>
+                <figcaption>
+                    <h2>{{ ad.quantity }} {{ ad.have }} to {{ ad.want }}</h2>
+                    <h3>{{ ad.creator.username }} - {{ ad.city }}</h3>
+                    <p>{{ ad.comment }}</p>
+                </figcaption>
             </a>
         </div>
     </figure>

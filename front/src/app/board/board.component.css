@@ -127,11 +127,10 @@ body {
 .create {
   background-color: #f9cf00;
   color: black;
-  padding: 2vh 6vw;
+  padding: 2vh 4vw;
   margin-right: 5vw;
   font-size: 20px;
   font-weight: bold;
-  margin-top: -7vh;
 }
 
 a {
@@ -181,4 +180,39 @@ input, select {
   background-image: url("../../assets/images/currency-banner.jpg");
   background-size: cover;
   background-position: 100%;
+}
+
+h1 {
+  margin-left: -0.5em;
+  margin-bottom: 1.3em;
+}
+  
+@media (max-width: 1084px) {
+  [class*= "col-md-2.5"] {
+    width: 100%;
+  }
+  .coin-pic {
+    height: 20vh;
+  }
+}
+  
+@media (max-width: 768px) {
+  [class*= "col-"] {
+    width: 100%;
+    text-align: center;
+  }
+  .coin-pic {
+    height: 40vh;
+  }
+  .box-top-board {
+    padding-left: 0;
+  }
+  h1 {
+    margin-bottom: 0.5em;
+    margin-left: 0em;
+    font-size: 1.7rem;
+  }
+  .create {
+    margin-top: 0.5em;
+  }
 }
