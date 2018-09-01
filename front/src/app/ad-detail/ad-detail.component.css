@@ -174,7 +174,7 @@ select {
   margin-bottom: 3vh;
   margin-top: 2vh;
   border: 1px solid gray;
-  max-width: 30%;
+  max-width: 35%;
   background-color: #EDEDEE;
 }
 
@@ -215,4 +215,15 @@ ul {
 
 .chat-ad input {
   margin-left: 3vw;
+}
+
+.mail {
+  color: #000e91;
+}
+
+@media (max-width: 767px) {
+  .chat-ad {
+    max-width: 98%;
+    margin: 0 auto;
+  }
 }

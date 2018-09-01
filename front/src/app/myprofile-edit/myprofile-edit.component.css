@@ -20,8 +20,6 @@
 .snip1515 {
   font-family: 'Open Sans', Arial, sans-serif;
   position: relative;
-  float: left;
-  
   min-width: 230px;
   max-width: 450px;
   width: 100%;
@@ -30,7 +28,6 @@
   line-height: 1.4em;
   font-size: 14px;
   box-shadow: none !important;
-  margin-left: 34vw;
   margin-top: 4vh;
 }
 
@@ -140,4 +137,8 @@ h1 {
 input {
   border-radius: 5px;
   padding: 1vh 1vw;
+}
+
+figure {
+  margin: 0 auto;
 }

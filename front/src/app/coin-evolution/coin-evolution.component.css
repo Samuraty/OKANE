@@ -3,7 +3,6 @@
   background-image: url("../../assets/images/tools2.jpg");
   background-size: cover;
   background-position: 100%;
-
 }
 
 table {
@@ -19,20 +18,19 @@ td {
 }
 
 thead td {
-border-bottom: 1px solid rgba(0,0,0,0.5);
-text-transform:uppercase;
-color:white;
-font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
 }
-thead tr{
-background-color:#058392;
-
+thead tr {
+  background-color: #058392;
 }
-td{
-  border-right: 1px solid rgba(0,0,0,0.5);
-  border-top: 1px solid rgba(0,0,0,0.5);
-  border-left: 1px solid rgba(0,0,0,0.5);
-  border-bottom: 1px solid rgba(0,0,0,0.5);
+td {
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  border-left: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .chart-coin {
@@ -49,15 +47,15 @@ td{
 }
 
 .box-mini-filter {
-  padding-right: 4vw;
-  padding-left: 1vw;
+  padding-right: 2vw;
 }
 
 form {
   color: white;
 }
 
-input, select {
+input,
+select {
   color: black;
 }
 
@@ -73,7 +71,7 @@ input, select {
 .create-week {
   background-color: #f9cf00;
   color: black;
-  padding: 1vh 2vw;
+  padding: 1vh 2.7vw;
   font-size: 20px;
   font-weight: bold;
 }
@@ -93,14 +91,6 @@ input, select {
   font-size: 20px;
 }
 
-.form-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top:-6vh;
-  margin-left: 2vw;
-}
-
 .button-yellow {
   display: flex;
   flex-direction: column;
@@ -117,11 +107,66 @@ input, select {
 }
 
 h1 {
-  margin-left: 3vw;
+  margin-left: -0.5em;
+  margin-bottom: 1.3em;
 }
 
 label {
   margin-right: 1vw;
   font-size: 16px;
   font-weight: bold;
+}
+
+.space {
+  margin-left: 2em;
+}
+
+.header {
+  margin-left: 5em;
+}
+
+.header-input {
+  margin-left: -3em;
+  margin-bottom: 1em;
+}
+
+.header-buttons {
+  margin-left: -2.6em;
+}
+
+@media (max-width: 1084px) {
+  [class*="col-md-2.5"] {
+    width: 100%;
+  }
+  .coin-pic {
+    height: 20vh;
+  }
+
+  .create-convert {
+    margin-bottom: 2vh;
+  }
+}
+
+@media (max-width: 768px) {
+  [class*="col-"] {
+    width: 100%;
+    text-align: center;
+  }
+  .coin-pic {
+    height: 40vh;
+  }
+  .box-top-board {
+    padding-left: 0;
+  }
+  h1 {
+    margin-bottom: 0.5em;
+    margin-left: 0em;
+    font-size: 1.7rem;
+  }
+  .create {
+    margin-top: 0.5em;
+  }
+  .create-convert {
+    margin-bottom: 2vh;
+  }
 }
