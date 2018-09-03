@@ -2,114 +2,62 @@
     <h1> Create Your Post </h1>
     <div>
         <a [routerLink]="['/ads']">
-        <i class="far fa-arrow-alt-circle-left"></i>Back to Board</a>
+            <i class="far fa-arrow-alt-circle-left"></i>Back to Board</a>
     </div>
 </div>
-
-
-<!-- <form>
-    <label for="city">City</label>
-    <input type="text" [ngModel]="ad.city | capitalizeFirst" (ngModelChange)="ad.city=$event" name="city" />
-    <br>
-    <label for="quantity">Quantity</label>
-    <input type="number" [(ngModel)]="ad.quantity" name="quantity" min=0 />
-    <br>
-    <label for="have">Have</label>
-    <select name="have" [(ngModel)]="ad.have">
-        <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-    </select>
-    <br>
-    <label for="want">Want</label>
-    <select name="want" [(ngModel)]="ad.want">
-        <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-    </select>
-    <br>
-    <label for="comment">Comment</label>
-    <textarea name="comment" id="comment" [(ngModel)]="ad.comment" cols="40" rows="2" maxlength={{maxLength}}></textarea>
-    
-    <div id="characters">
-        <span>Characters left: {{maxLength - ad.comment.length}}</span>
-    </div>
-    <button (click)="newAd()"> Create</button>
-</form> -->
-
-
-<!-- 
-<div class="container">
-    <h1 id="title">Send us your feedback!</h1>
-    <br />
-    <form id="survey-form" action="" method="post" autocomplete="on">
-
-        <label id="name-label" for="city">* City</label>
-        <input autofocus type="text" id="city" class="input-field" placeholder="City" name="city" [ngModel]="ad.city | capitalizeFirst" (ngModelChange)="ad.city=$event" name="city"required>
-        <br />
-        <br />
-        <label id="quantity" for="quantity">* Quantity </label>
-        <input type="number" name="quantity" id="quantity" class="input-field" required placeholder="Quantity">
-        <br />
-        <br />
-
-        <label id="number-label" for="age">* Age</label> 
-        <input type="number" name="age" id="number" min="1" max="125" class="input-field" placeholder="Age">
-        <br/>
-        <br />
-
-        <label for="gender"> *Gender</label> 
-        <select id="dropdown" class="dropdown" name="gender">
-            <option disabled value="Select an option">Select an option</option>
-            <option>--</option>
-            <option value="female">Female</option>
-            <option value="male">Male</option>
-            <option value="other">Other</option>
-        </select>
-        <br />
-        <br />
-        <br /> What is your current career? Does it match your dream career?
-        <br>
-        <br>
-
-        <textarea id="comments" class="input-field" name="comment" placeholder=""></textarea>
-        <br />
-        <br />
-
-        <button id="submit" type="submit">Submit</button>
-
-    </form>
-</div> -->
 
 <div class="container">
     <h1 id="title">Complete all mandatory fields (*) and create your post!</h1>
 
     <form id="survey-form" action="" method="post" autocomplete="on">
 
-        <div>
-            <label id="label" for="city">* City where you want to meet: </label>
-            <input class="input-field" type="text" [ngModel]="ad.city | capitalizeFirst" (ngModelChange)="ad.city=$event" name="city"
-            />
-        </div>
-        <div>
-            <label id="label" for="have">* Currency you want to get rid of: </label>
-            <select class="dropdownHave" name="have" [(ngModel)]="ad.have">
-                <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-            </select>
-            <div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label id="label" for="city">* City where you want to meet: </label>
             </div>
-            <label id="label" for="quantity">* Quantity you have available: </label>
-            <input type="number" class="number-field" [(ngModel)]="ad.quantity" name="quantity" min=0 />
-            <div>
+            <div class="col-12 col-md-6">
+                <input class="input-field" type="text" [ngModel]="ad.city | capitalizeFirst" (ngModelChange)="ad.city=$event" name="city"
+                />
             </div>
-            <label id="label" for="want">* Currency you want to obtain: </label>
-            <select class="dropdownWant" name="want" [(ngModel)]="ad.want">
-                <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
-            </select>
         </div>
-        <div>
-            <label id="label-2" for="comment">Additional comments (if any): </label>
-            <textarea class="input-field" name="comment" id="comments" [(ngModel)]="ad.comment" cols="40" rows="2" maxlength={{maxLength}}></textarea>
-            <div id="characters">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label id="label" for="have">* Currency you want to get rid of: </label>
+            </div>
+            <div class="col-12 col-md-6">
+                <select class="dropdownHave" name="have" [(ngModel)]="ad.have">
+                    <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label id="label" for="quantity">* Quantity you have available: </label>
+            </div>
+            <div class="col-12 col-md-6">
+                <input type="number" class="number-field" [(ngModel)]="ad.quantity" name="quantity" min=0 />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label id="label" for="want">* Currency you want to obtain: </label>
+            </div>
+            <div class="col-12 col-md-6">
+                <select class="dropdownWant" name="want" [(ngModel)]="ad.want">
+                    <option *ngFor="let coin of currencies" [value]="coin">{{coin}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label id="label-2" for="comment">Additional comments (if any): </label>
                 <span id="label">(characters left: {{maxLength - ad.comment.length}})</span>
             </div>
+            <div class="col-12 col-md-6">
+                <textarea class="input-field" name="comment" id="comments" [(ngModel)]="ad.comment" cols="40" rows="2" maxlength={{maxLength}}></textarea>
+            </div>
         </div>
+
         <div class="buttons">
             <div>
                 <a [routerLink]="['/ads']">
