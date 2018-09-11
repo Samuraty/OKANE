@@ -11,10 +11,10 @@ export class ConvertService {
   constructor(private http: Http) {}
 
   convertCurrency(fromCurrency, toCurrency) {
-
-    fromCurrency = encodeURIComponent(fromCurrency);
+    //como voy a crear una URL por componentes tengo que usar encodeURIComponent
+    fromCurrency = encodeURIComponent(fromCurrency); //escapa los caracteres que pueden dar un error al enviarlo por HTTP, esto permite crear el query
     toCurrency = encodeURIComponent(toCurrency);
-    const query = fromCurrency + '_' + toCurrency;
+    const query = fromCurrency + '_' + toCurrency; //la API lo pide en este formato
 
     const url = 'https://free.currencyconverterapi.com/api/v6/convert?q='
     + query + '&compact=ultra';

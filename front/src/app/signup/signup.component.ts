@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit {
   username;
   email;
   password;
-  submit = false;
+  submit = false; //esto es para el canDeactivate
   errorMessage = "";
 
   constructor(private sessionService: SessionService, private router: Router) {}
@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
 
   signup(username: string, email: string, password: string) {
     if(username!== undefined && email!== undefined && password!== undefined) {
-      this.submit = true;
+      this.submit = true;  //para que no salga canDeactivate
       console.log("signup....");
       this.sessionService
         .signup(username, email, password)
@@ -39,7 +39,6 @@ export class SignupComponent implements OnInit {
 
   canDeactivate() {
     console.log("I am navigating away");
-    // if the editName !== this.user.name
     if (
       this.submit === false && 
       (this.username !== undefined ||

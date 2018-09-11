@@ -22,5 +22,5 @@ export const routes: Routes = [
   { path:'ad/edit/:id', component: AdEditComponent, canDeactivate:[CanDeactivateGuard]},
   { path:'evolution', component:CoinEvolutionComponent},
   { path:'', component: LandingComponent},
-  { path:'**', redirectTo:''}
+  { path:'**', redirectTo:''} //rutas que no existen se redireccionan al landing
 ];

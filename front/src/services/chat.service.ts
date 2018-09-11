@@ -1,3 +1,6 @@
+//En desarrollo, no es 100% funcional aún
+
+
 import { Injectable } from "../../node_modules/@angular/core";
 import * as io from "socket.io-client";
 import { environment } from "../environments/environment";

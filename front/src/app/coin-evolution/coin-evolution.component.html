@@ -61,7 +61,7 @@
                         <td>{{haveConvert}} / {{wantConvert}}</td>
                     </tr>
                 </thead>
-                <tr *ngFor="let date of dateArray; let i=index">
+                <tr *ngFor="let date of dateArray; let i=index"> <!-- como quiero acceder a elementos de 2 arrays en un mismo for, uso index -->
                     <td>{{ date }}</td>
                     <td>{{ ratioArray[i] }}</td>
                 </tr>

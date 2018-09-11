@@ -18,7 +18,7 @@ export class AdNewComponent implements OnInit {
     comment: ""
   };
 
-  submit = false;
+  submit = false; //esto es para el canDeactivate 
 
   currencies = [
     "EUR",
@@ -45,16 +45,15 @@ export class AdNewComponent implements OnInit {
   ngOnInit() {}
 
   newAd() {
-    this.submit = true;
+    this.submit = true; //para evitar que salga la ventana canDeactivate cuando pincho en crear
     console.log(this.ad);
     this.adService.newAd(this.ad).subscribe(() => {
       this.router.navigate(["/ads"]);
     });
   }
 
-  canDeactivate() {
+  canDeactivate() {  //saltará cuando se escriba en alguno de los campos y quiera salir de la página
     console.log("I am navigating away");
-    // if the editName !== this.user.name
     if (
       this.submit === false && 
       (this.ad.city.length !== 0 ||

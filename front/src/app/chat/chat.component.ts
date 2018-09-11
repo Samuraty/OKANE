@@ -1,3 +1,5 @@
+//En desarrollo, no es 100% funcional aún
+
 import { Component, OnInit } from '@angular/core';
 import { ChatService } from '../../services/chat.service';
 

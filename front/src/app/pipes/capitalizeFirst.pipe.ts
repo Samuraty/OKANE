@@ -8,8 +8,8 @@ export class CapitalizeFirstPipe implements PipeTransform {
         if (!input) {
           return '';
         }
-        return input.replace(/\w\S*/g, function(txt){
-          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        return input.replace(/\w\S*/g, function(txt){  //reemplaza todos los caracteres del string que no sean espacios por la función
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();  //primera en mayúscula , resto en minúscula
       });
     }
 }

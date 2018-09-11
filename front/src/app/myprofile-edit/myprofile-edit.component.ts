@@ -18,10 +18,10 @@ export class MyprofileEditComponent implements OnInit {
   oldUser: string;
   oldEmail: string;
   oldImage: any;
-  submit = false;
+  submit = false; //esto es para el canDeactivate 
 
-  
-  uploader: FileUploader = new FileUploader({
+  //cloudinary
+  uploader: FileUploader = new FileUploader({  
     url: `${environment.BASEURL}/api/user/edit`,
     method: 'POST'
   });
@@ -42,6 +42,8 @@ export class MyprofileEditComponent implements OnInit {
   }
 
   ngOnInit() { }
+
+  //guardo los detalles iniciales en estas variables cuando carga la vista de la página para el canDeactivate
   ngAfterViewInit() {
     this.oldUser = this.user.username;
     this.oldEmail = this.user.email;
@@ -50,8 +52,8 @@ export class MyprofileEditComponent implements OnInit {
   
 
   edit() {
-    this.submit = true;
-    if (this.uploader.queue.length === 0) {
+    this.submit = true; // para que no salga canDeactivate
+    if (this.uploader.queue.length === 0) { 
       this.userService.edit(this.user).subscribe(us => {
         this.user = us;
         this.router.navigate(['/profile']);

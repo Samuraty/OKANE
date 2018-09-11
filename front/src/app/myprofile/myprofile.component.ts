@@ -20,12 +20,7 @@ export class MyprofileComponent implements OnInit {
   adList;
   
   constructor(private adService: AdService, private sessionService: SessionService, private userService: UserService, private router:Router) {
-    // if (!this.sessionService.user) {
-    //   this.router.navigate(['/login']);
-    // } else {
-    //   this.sessionService.isLogged().subscribe(user => this.user = user);
-    // }
-    
+    // creo una lista de los anuncios creados por mi
     this.sessionService.isLogged().subscribe(user => {
       this.user = user;
       console.log(user)
@@ -35,10 +30,8 @@ export class MyprofileComponent implements OnInit {
           this.adList = ads;
         });
     });
-
   }
 
   ngOnInit() {
-    //this.adService.getAd(this.user._id).subscribe(ads => this.ads = ads)
   }
 }

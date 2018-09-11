@@ -28,7 +28,7 @@ export class AdDetailComponent implements OnInit {
   canDelete: boolean = false;
   canEdit: boolean = false;
 
-  executed: boolean = false;
+  executed: boolean = false; //para evitar llamadas constantes a la API y evitar el bloqueo por ip (límite 100 usos por hora)
 
   constructor(
     private route: ActivatedRoute,
@@ -51,10 +51,10 @@ export class AdDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(
+    setTimeout(  // evitar que me de error al correr la función de convert antes de que haya cargado las variables quantity, have y want (ngAfterViewInit no funciona)
       () => this.convert(this.ad.quantity, this.ad.have, this.ad.want),
-      250
-    );
+      250 
+    ); 
   }
 
   deleteAd() {
@@ -68,9 +68,9 @@ export class AdDetailComponent implements OnInit {
       this.executed = true;
       this.today = Date.now();
       this.convertService.convertCurrency(from, to).subscribe(res => {
-        this.resultConvert = Number(Object.values(res)[0]) * amount;
+        this.resultConvert = Number(Object.values(res)[0]) * amount;  //el valor de la moneda sacado de la web de la API * la cantidad
         console.log(this.resultConvert);
-        this.convertion = Math.round(this.resultConvert * 100) / 100 + " " + to;
+        this.convertion = Math.round(this.resultConvert * 100) / 100 + " " + to; // redondea a 2 decimales
         return this.convertion;
       });
     }

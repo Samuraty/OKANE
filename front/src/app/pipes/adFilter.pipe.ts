@@ -9,7 +9,7 @@ export class AdCityFilterPipe implements PipeTransform {
           return input;
         }
         return input.filter( ad =>
-            ad.city.toLowerCase().indexOf(searchCity.toLowerCase()) !== -1);
+            ad.city.toLowerCase().indexOf(searchCity.toLowerCase()) !== -1); //filtra y muestra las ciudades que coincidan con lo que se ponga en searchCity en el HTML, cuando no existe es -1 por eso solo busca cuando es distinto de -1
     }
 }
 
@@ -23,7 +23,7 @@ export class AdHaveFilterPipe implements PipeTransform {
           return input;
         }
         return input.filter( ad =>
-            ad.have.indexOf(searchHave) !== -1);
+            ad.have.indexOf(searchHave) !== -1); 
     }
 }
 

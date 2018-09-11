@@ -19,7 +19,7 @@ export class AdEditComponent implements OnInit {
   oldHave: string;
   oldWant: string;
   oldComment: string;
-  submit = false;
+  submit = false; //esto es para el canDeactivate 
 
   currencies = ["EUR","USD","AUD","CNY","KRW","CAD","JPY","GBP","PKR","INR"];
   maxLength = 40;  //máximo caracteres para comentarios.
@@ -43,12 +43,12 @@ export class AdEditComponent implements OnInit {
    }
 
   ngOnInit() {
-    setTimeout(() => {
+    setTimeout(() => { // evitar que me de error al correr la función de setInitial antes de que haya cargado las variables (ngAfterViewInit no funciona)
       this.setInitial()
     }, 250);
   }
 
-  setInitial() {
+  setInitial() {  // guardo los valores iniciales en las variables old para compararlo después en el canDeactivate
     this.oldCity = this.ad.city;
     this.oldQuantity = this.ad.quantity;
     this.oldHave = this.ad.have;
@@ -57,14 +57,14 @@ export class AdEditComponent implements OnInit {
   }
 
   edit(ad) {
-    this.submit = true;
+    this.submit = true;  //para evitar que salga la ventana canDeactivate cuando pincho en save
     this.adService.edit(this.ad).subscribe(ad => {
       this.ad = ad;
       this.router.navigate(['/ad',ad._id]);
     })
   }
 
-  canDeactivate() {
+  canDeactivate() { //saltará cuando alguno de los campos haya sido modificado y quiera salir de la página
     console.log('I am navigating away');
     if (this.submit === false && (this.oldCity !== this.ad.city || this.oldHave !== this.ad.have ||
     this.oldWant !== this.ad.want || this.oldQuantity !== this.ad.quantity || 
